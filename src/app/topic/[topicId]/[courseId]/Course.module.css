@@ -4,9 +4,11 @@
   flex-direction: column;
   min-height: 100svh;
   background-color: var(--color-beige);
-  padding: 24px 20px 32px;
-  gap: 20px;
+  padding: 32px 16px 40px; /* Padding ajusté pour respecter les bords dessinés de l'asset */
+  gap: 16px;
+  justify-content: center;
   box-sizing: border-box;
+  /* On utilise l'asset de la carte fourni par le designer */
   /* On ne met pas overflow: hidden ici pour laisser le stack respirer */
 }
 
@@ -142,11 +144,12 @@
   background-repeat: no-repeat;
   background-color: transparent;
   /* Padding interne pour que le contenu soit bien dans le cadre dessiné */
-  padding: 40px 28px 56px;
+  padding: 40px 28px 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: 24px;
   cursor: pointer;
   /* Ratio carte (portrait) */
   aspect-ratio: 0.6;
@@ -178,6 +181,53 @@
 /* Compteur "1/5" en bas à droite */
 .counter {
   align-self: flex-end;
+}
+
+/* ===== ZONES CLIQUABLES (gauche = retour, droite = suivant) ===== */
+
+/* Les 2 zones couvrent la carte entière sans toucher au contenu visible */
+.clickZoneLeft,
+.clickZoneRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 20;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  /* Pas de outline au focus pour garder le design propre */
+  outline: none;
+}
+
+.clickZoneLeft {
+  left: 0;
+  width: 40%;
+}
+
+.clickZoneRight {
+  right: 0;
+  width: 60%;
+}
+
+/* Le petit chevron "‹" qui apparaît à gauche quand on peut revenir en arrière */
+.backIndicator {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 25;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-black);
+  opacity: 0.25;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+/* Quand la souris survole la zone gauche, le chevron devient plus visible */
+.clickZoneLeft:hover ~ .backIndicator {
+  opacity: 0.5;
 }
 
 /* ===== DESKTOP ===== */

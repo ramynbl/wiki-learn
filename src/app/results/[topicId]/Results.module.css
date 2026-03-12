@@ -1,0 +1,178 @@
+/* ===== PAGE RÉSULTATS ===== */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  background-color: var(--color-beige);
+  box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px 20px 0;
+  flex-shrink: 0;
+}
+
+.globeIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtnImg {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* ===== CONTENU CENTRAL (toutes les phases) ===== */
+.centerContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 28px;
+  gap: 28px;
+  text-align: center;
+}
+
+/* Image du livre ou du globe qui apparaît */
+.heroImage {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+/* Titre principal style cartoon */
+.mainTitle {
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* Texte d'engagement (phase 2) */
+.engageText {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-black);
+  text-align: center;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+/* ===== PHASE 3 : ZONE CHOIX ===== */
+.choiceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Un bloc de choix (titre + description + CTA) */
+.choiceBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.choiceLabel {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.choiceDescription {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+/* CTA blanc "Continuer" */
+.ctaWhite {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+  border-radius: 19px;
+  box-shadow: 4px 4px 0px #000000;
+  cursor: pointer;
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ctaWhite:active {
+  box-shadow: 2px 2px 0px #000000;
+  transform: translate(2px, 2px);
+}
+
+/* CTA bleu "Se connecter" */
+.ctaBlue {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #5AADDD;
+  border: 2px solid #000000;
+  border-radius: 19px;
+  box-shadow: 4px 4px 0px #000000;
+  cursor: pointer;
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ctaBlue:active {
+  box-shadow: 2px 2px 0px #000000;
+  transform: translate(2px, 2px);
+}
+
+/* Hover desktop pour les CTA */
+.ctaWhite:hover,
+.ctaBlue:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0px #000000;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    width: 200px;
+    height: 200px;
+  }
+
+  .choiceSection {
+    max-width: 400px;
+  }
+}

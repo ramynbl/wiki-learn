@@ -10,7 +10,7 @@ import styles from './Course.module.css';
 
 /**
  * Page des fiches de cours.
- * Clic sur la carte → carte suivante.
+ * Clic droite → carte suivante. Clic gauche → carte précédente.
  * Dernière carte → redirection vers le quiz.
  */
 export default function CoursePage({ params }) {
@@ -21,6 +21,8 @@ export default function CoursePage({ params }) {
   const course = courses.find((c) => c.id === courseId);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  // La direction sert à animer la carte dans le bon sens (gauche ou droite)
+  const [direction, setDirection] = useState(1);
 
   if (!course || course.cards.length === 0) {
     router.push('/learn');
@@ -35,15 +37,32 @@ export default function CoursePage({ params }) {
     ? Math.round((currentIndex / (totalCards - 1)) * 100)
     : 100;
 
+  // Carte suivante (clic sur la zone droite)
   const handleNext = () => {
     if (currentIndex < totalCards - 1) {
+      setDirection(1);
       setCurrentIndex((prev) => prev + 1);
     } else {
       router.push(`/quiz/${topicId}`);
     }
   };
 
+  // Carte précédente (clic sur la zone gauche)
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setDirection(-1);
+      setCurrentIndex((prev) => prev - 1);
+    }
+  };
+
   const handleClose = () => router.push('/learn');
+
+  // Variantes d'animation selon la direction (gauche ou droite)
+  const slideVariants = {
+    enter: { opacity: 0, x: direction > 0 ? 60 : -60, scale: 0.96 },
+    center: { opacity: 1, x: 0, scale: 1 },
+    exit: { opacity: 0, x: direction > 0 ? -60 : 60, scale: 0.96 },
+  };
 
   return (
     <div className={styles.page}>
@@ -71,17 +90,10 @@ export default function CoursePage({ params }) {
         </button>
       </header>
 
-      {/* ===== BARRE DE PROGRESSION ===== */}
-      {/*
-        Logique : on reconstruit la rangée à partir de l'index courant.
-        - Les indices < currentIndex  → dots noirs (passés)
-        - L'indice === currentIndex   → pill noire avec fill blanc animé
-        - Les indices > currentIndex  → dots noirs (futurs)
-      */}
+      {/* Barre de progression */}
       <div className={styles.progressRow}>
         {Array.from({ length: totalCards }).map((_, i) => {
           if (i === currentIndex) {
-            // Étape courante → la pill avec fill blanc animé
             return (
               <div key={i} className={styles.progressPill}>
                 <motion.div
@@ -93,37 +105,34 @@ export default function CoursePage({ params }) {
               </div>
             );
           }
-          // Étape passée ou future → simple dot noir
           return <div key={i} className={styles.progressDot} />;
         })}
       </div>
 
-      {/* ===== ZONE DU STACK ===== */}
+      {/* Zone du stack */}
       <div className={styles.cardArea}>
-        {/* 4 cartes fantômes décalées en arrière-plan (card-cours.png, fond transparent) */}
         <div className={styles.ghost} />
         <div className={styles.ghost} />
         <div className={styles.ghost} />
         <div className={styles.ghost} />
 
-        {/* La carte active animée */}
-        <AnimatePresence mode="wait">
+        {/* La carte active avec animation directionnelle */}
+        <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentIndex}
             className={styles.card}
-            initial={{ opacity: 0, scale: 0.95, y: 24 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -16 }}
-            transition={{ type: 'spring', stiffness: 280, damping: 26 }}
-            onClick={handleNext}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ type: 'spring', stiffness: 300, damping: 28 }}
           >
-            {/* Titre */}
             <Typography variant="h2" className={styles.cardTitle} cartoon>
               {currentCard.title}
             </Typography>
 
-            {/* Image (si disponible) */}
-            {currentCard.image && (
+            {/* Image (spécifique au fait OU drapeau par défaut) */}
+            {currentCard.image ? (
               <Image
                 src={currentCard.image}
                 alt={currentCard.title}
@@ -132,15 +141,42 @@ export default function CoursePage({ params }) {
                 className={styles.cardImage}
                 unoptimized
               />
+            ) : (
+              /* Drapeau par défaut pour le pays si pas d'image spécifique */
+              <Image
+                src={`/assets/icons/${courseId}.png`}
+                alt="Drapeau"
+                width={120}
+                height={80}
+                className={styles.cardImage}
+                unoptimized
+              />
             )}
 
-            {/* Texte du fait */}
             <p className={styles.factText}>{currentCard.fact}</p>
 
-            {/* Compteur ex: "1/5" */}
             <Typography variant="h2" className={styles.counter} cartoon>
               {currentIndex + 1}/{totalCards}
             </Typography>
+
+            {/* Zones cliquables invisibles : gauche = retour, droite = suivant */}
+            {currentIndex > 0 && (
+              <button
+                className={styles.clickZoneLeft}
+                onClick={handlePrev}
+                aria-label="Carte précédente"
+              />
+            )}
+            <button
+              className={styles.clickZoneRight}
+              onClick={handleNext}
+              aria-label="Carte suivante"
+            />
+
+            {/* Chevron ‹ visible seulement quand on peut revenir en arrière */}
+            {currentIndex > 0 && (
+              <span className={styles.backIndicator}>‹</span>
+            )}
           </motion.div>
         </AnimatePresence>
       </div>
