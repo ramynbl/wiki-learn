@@ -13,13 +13,13 @@ export default function LoadingPage() {
   const selectedTopicId = useAppStore((state) => state.selectedTopicId);
 
   useEffect(() => {
-    // Si aucun thème n'est sélectionné (ex: accès direct à l'URL), on redirige à l'accueil
+    // C'est une sécurité : si on n'a pas de thème en mémoire, on rembobine vers l'accueil
     if (!selectedTopicId) {
       router.push('/learn');
       return;
     }
 
-    // Simulation d'un appel API lourd (1.5 secondes)
+    // On fait semblant que le serveur met 1.5 secondes à nous répondre
     const timer = setTimeout(() => {
       router.push(`/topic/${selectedTopicId}`);
     }, 1500);
@@ -38,7 +38,7 @@ export default function LoadingPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          {/* Petits cercles animés pour faire un effet de chargement "cartoon" */}
+          {/* Quelques divs qui rebondissent pour faire patienter l'utilisateur */}
           {[...Array(3)].map((_, i) => (
             <motion.div 
               key={i}

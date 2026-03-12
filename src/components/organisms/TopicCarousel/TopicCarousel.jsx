@@ -5,11 +5,12 @@ import TopicCard from '../../molecules/TopicCard/TopicCard';
 import styles from './TopicCarousel.module.css';
 
 /**
- * Organism gérant le listing horizontal des cartes Thèmes.
+ * TopicCarousel : Conteneur pour nos TopicCards. Sur mobile ça scrolle horizontalement,
+ * et sur desktop ça se met automatiquement en grille centrée grâce à notre CSS.
  */
 export default function TopicCarousel({ topics, onSelectTopic }) {
   
-  // Variantes d'animation pour l'apparition en cascade (stagger) des cartes
+  // Configuration de l'animation d'apparition des cartes les unes après les autres (effet d'escalier)
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -36,7 +37,7 @@ export default function TopicCarousel({ topics, onSelectTopic }) {
       initial="hidden"
       animate="show"
     >
-      {/* Marge fantôme pour centrer le premier élément si besoin */}
+      {/* Ce div vide nous aide à garder un espace correct sur les bords quand on scrolle sur mobile */}
       <div className={styles.spacer}></div>
 
       {topics.map((topic) => (
@@ -48,7 +49,7 @@ export default function TopicCarousel({ topics, onSelectTopic }) {
         </motion.div>
       ))}
 
-      {/* Marge fantôme pour la fin du scroll */}
+      {/* Pareil ici, un espace vide à la fin pour pas que la dernière carte colle au bord de l'écran */}
       <div className={styles.spacer}></div>
     </motion.div>
   );

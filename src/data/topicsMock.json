@@ -2,22 +2,36 @@
   {
     "id": "geographie",
     "title": "Géographie",
-    "coverImage": "/assets/illustrations/geo-cover.png",
-    "tagline": "Apprends tout sur la planète !",
+    "coverImage": "/assets/icons/geographie.png",
+    "tagline": "Découvre le monde !",
     "topicsCount": 5
   },
   {
-    "id": "sciences",
-    "title": "Sciences",
-    "coverImage": "/assets/illustrations/sciences-cover.png",
-    "tagline": "Découvre les mystères de l'univers",
+    "id": "informatique",
+    "title": "Informatique",
+    "coverImage": "/assets/icons/informatique.png",
+    "tagline": "Plonge dans le code",
     "topicsCount": 8
   },
   {
-    "id": "histoire",
-    "title": "Histoire",
-    "coverImage": "/assets/illustrations/history-cover.png",
-    "tagline": "Voyage à travers le temps",
-    "topicsCount": 4
+    "id": "animaux",
+    "title": "Animaux",
+    "coverImage": "/assets/icons/animaux.png",
+    "tagline": "Explore le règne animal",
+    "topicsCount": 12
+  },
+  {
+    "id": "espace",
+    "title": "Espace",
+    "coverImage": "/assets/icons/espace.png",
+    "tagline": "Explore l'univers",
+    "topicsCount": 12
+  },
+   {
+    "id": "culture",
+    "title": "Culture",
+    "coverImage": "/assets/icons/cultural.png",
+    "tagline": "Explore le monde",
+    "topicsCount": 12
   }
 ]

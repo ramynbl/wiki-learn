@@ -4,15 +4,14 @@ import ImageWrapper from '../../atoms/ImageWrapper/ImageWrapper';
 import styles from './TopicCard.module.css';
 
 /**
- * Molecule représentant une carte de Thème.
- * Combine Typography, ImageWrapper et Button.
- * Propriété "irregularBorder" pour le style spécifique dessiné à la main.
+ * TopicCard : C'est la carte qui affiche un thème (comme Géographie ou Informatique).
+ * Elle regroupe une image, un titre et le bouton pour commencer.
  */
 export default function TopicCard({ topic, onSelect }) {
   return (
     <article className={`${styles.card} scroll-snap-align-center`}>
       <div className={styles.imageContainer}>
-        {/* Résolution placeholder si on a pas les images pour l'instant */}
+        {/* Si on n'a pas d'image, on affiche simplement ce qu'on peut récupérer en attendant */}
         <ImageWrapper 
           src={topic.coverImage} 
           alt={`Illustration pour ${topic.title}`} 

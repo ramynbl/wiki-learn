@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 
-export default function Home() {
-  // Pour ce MVP, l'accueil redirige directement vers le choix du thème.
+export default async function Home() {
+  // Une simple redirection côté serveur vers la vue /learn
   redirect('/learn');
+  return null;
 }

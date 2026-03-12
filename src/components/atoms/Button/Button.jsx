@@ -1,11 +1,11 @@
+/* On utilise use client pour  */
 "use client";
 
 import { motion } from 'framer-motion';
 import styles from './Button.module.css';
 
 /**
- * Bouton Primaire Pédagogique (Atom)
- * Utilise Framer Motion pour un effet Rebond (Spring)
+ * Composant Button : C'est notre bouton principal qui gère l'animation de rebond via Framer Motion.
  */
 export default function Button({ 
   children, 
@@ -17,7 +17,7 @@ export default function Button({
   isError = false
 }) {
   
-  // Combinaison des classes CSS Modules + Utilitaires globaux
+  // On fusionne les classes CSS du module avec d'éventuelles classes passées en prop
   const btnClass = `
     ${styles.button} 
     ${styles[variant]} 

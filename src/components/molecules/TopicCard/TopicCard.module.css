@@ -1,44 +1,58 @@
 .card {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-light-cream);
   width: 260px; /* Largeur fixe pour le carousel mobile */
   flex-shrink: 0; /* Empêche l'écrasement dans flex */
   
-  padding: 16px;
+  padding: 32px 16px 40px; /* Padding ajusté pour respecter les bords dessinés de l'asset */
   gap: 16px;
   
-  /* Astuce CSS pour simuler une bordure irrégulière "dessinée à la main" */
-  border: var(--border-thickness) solid var(--color-black);
-  border-radius: 40px 15px 45px 15px / 15px 45px 15px 40px; 
-  /* Si le rendu n'est pas parfait, on repassera sur un SVG de bordure, mais c'est le standard CSS moderne pour ça ! */
-
-  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+  /* On utilise l'asset de la carte fourni par le designer */
+  background-image: url('/assets/components/card-snap.png');
+  background-size: 100% 100%; /* S'étire doucement de la bonne façon sur la hauteur du contenu */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  
+  border: none;
+  box-shadow: none;
 }
 
 .imageContainer {
   width: 100%;
-  aspect-ratio: 4/3;
-  /* On force un border radius cartoon sur l'atom ImageWrapper interne 
-     qui peut lui aussi avoir un aspect irrégulier si besoin */
+  height: 120px; /* On réduit la hauteur pour rapetisser les icônes fournies */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Modifier l'atom image wrapper à l'intérieur */
+/* Sur une vraie image PNG détourée, on enlève le fond bleu placeholder et les bordures */
 .imageContainer :global(.cartoon-border) {
-  border-radius: 12px 18px 12px 16px / 16px 12px 14px 18px;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+/* L'atom ImageWrapper doit utiliser object-fit: contain pour ne pas rogner le globe */
+.imageContainer :global(img) {
+  object-fit: contain !important;
+  max-width: 100px; /* Restreint la largeur max de l'icône pour qu'elle ne soit pas énorme */
 }
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px; /* Plus d'espace comme sur Figma */
 }
 
 .title {
   text-align: center;
+  /* La classe .h2 gère déjà le text-stroke et shadow exacts du figma */
 }
 
 .button {
-  width: 80%; /* Le bouton ne prend pas toute la largeur */
+  width: 80%;
 }

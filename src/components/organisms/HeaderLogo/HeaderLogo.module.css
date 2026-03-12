@@ -7,26 +7,29 @@
   width: 100%;
 }
 
-.title {
-  text-align: center;
-  color: var(--color-white);
-  /* Use tracking for the typical Wiki font style if needed */
-  letter-spacing: 0.05em;
+.logoWrapper {
+  width: 250px;
+  height: auto;
+}
+
+/* On annule la bordure cartoon générique sur cette image car c'est un Logo PNG transparent */
+.logoImage {
+  border: none !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
 }
 
 .illustrationWrapper {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   /* Optionnel : animation CSS infinie pour faire flotter le globe */
   animation: float 4s ease-in-out infinite;
 }
 
-/* On personnalise la bordure du wrapper image pour qu'elle soit très carrée/irrégulière 
-   exactement comme sur ta maquette du globe (carré violet sur la maquette d'ailleurs) */
-.illustrationWrapper :global(.cartoon-border) {
-  border-radius: 4px;
-  background-color: transparent;
-  border-color: #8B5CF6; /* Violet de la maquette */
+/* On annule la bordure cartoon de l'atome pour la planète, elle a déjà son style dans le PNG */
+.globeImage {
+  border: none !important;
+  background-color: transparent !important;
 }
 
 @keyframes float {

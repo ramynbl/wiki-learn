@@ -2,8 +2,8 @@ import Image from 'next/image';
 import styles from './ImageWrapper.module.css';
 
 /**
- * Encapsule logiquement les images/covers dans l'application
- * Applique une bordure cartoon autour.
+ * ImageWrapper : Ce composant nous sert de conteneur générique pour les images Next.js.
+ * Ça nous permet de ne pas avoir à réécrire la propriété 'fill' partout et de gérer l'aspect ratio facilement.
  */
 export default function ImageWrapper({ 
   src, 
@@ -22,7 +22,7 @@ export default function ImageWrapper({
         height={height}
         priority={priority}
         className={styles.image}
-        // Fallback placeholder during load if needed
+        // On gère une couleur de secours en cas de problème de chargement
         unoptimized
       />
     </div>

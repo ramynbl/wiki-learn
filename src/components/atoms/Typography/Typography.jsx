@@ -1,9 +1,8 @@
 import styles from './Typography.module.css';
 
 /**
- * Pédagogie : On sépare la typographie en un "Atom" unique
- * pour centraliser le paramétrage des fonts (Lexend pour le texte, Poppins pour les titres)
- * et s'assurer que si le design change, on modifie à un seul endroit.
+ * Composant Typography : Centralise toutes nos polices (Lexend pour les textes, Poppins pour les titres).
+ * On l'utilise partout à la place des balises <h1> ou <p> classiques pour garder un design cohérent.
  */
 export default function Typography({ 
   variant = 'p', 
@@ -14,8 +13,10 @@ export default function Typography({
 }) {
   const Component = variant;
   
-  // Si le style 'cartoon' est activé, on ajoute la classe globale `cartoon-text`
-  const baseClasses = `${styles[variant]} ${cartoon ? 'cartoon-text' : ''}`;
+  // On ajoute la classe 'cartoon-text' si la prop 'cartoon' est vraie
+  // Exception pour h1/h2 : ces titres ont déjà leur propre effet dans notre module CSS
+  const applyCartoonLayer = cartoon && variant !== 'h2' && variant !== 'h1';
+  const baseClasses = `${styles[variant]} ${applyCartoonLayer ? 'cartoon-text' : ''}`;
   const finalClasses = `${baseClasses} ${className}`.trim();
 
   return (
