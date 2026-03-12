@@ -1,0 +1,108 @@
+/* ===== BOUTON DE RÉPONSE ===== */
+
+/* Le bouton de base, style cartoon fidèle au Figma */
+.button {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 2px solid #000000;
+  border-radius: 19px;
+  box-shadow: 4px 4px 0px #000000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, box-shadow 0.15s ease;
+  padding: 16px;
+}
+
+/* Quand on appuie, le bouton "s'enfonce" */
+.button:active {
+  box-shadow: 2px 2px 0px #000000;
+  transform: translate(2px, 2px);
+}
+
+/* ===== VARIANTS ===== */
+
+/* Carré : pour les réponses courtes (grille 2×2) */
+.square {
+  aspect-ratio: 1;
+  width: 100%;
+}
+
+/* Large : pour les réponses longues (pleine largeur) */
+.wide {
+  width: 100%;
+  padding: 18px 24px;
+}
+
+/* Le texte dans le bouton */
+.label {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+/* ===== ÉTATS ===== */
+
+/* Bonne réponse → fond vert */
+.correct {
+  background-color: #8ECC7F;
+  border-color: #000000;
+}
+
+/* Mauvaise réponse → fond rouge + animation de tremblement */
+.wrong {
+  background-color: #E35050;
+  border-color: #000000;
+  animation: shake 0.4s ease-in-out;
+}
+
+.wrong .label {
+  color: #FFFFFF;
+}
+
+.correct .label {
+  color: #000000;
+}
+
+/* Le petit tremblement quand on se trompe */
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  15% {
+    transform: translateX(-6px);
+  }
+
+  30% {
+    transform: translateX(5px);
+  }
+
+  45% {
+    transform: translateX(-4px);
+  }
+
+  60% {
+    transform: translateX(3px);
+  }
+
+  75% {
+    transform: translateX(-2px);
+  }
+}
+
+/* Quand on passe la souris sur le bouton, il monte un peu
+Uniquement en responsive */
+@media (min-width: 768px) {
+  .button:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 0px #000000;
+  }
+}

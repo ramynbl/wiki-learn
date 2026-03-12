@@ -1,0 +1,156 @@
+/* ===== PAGE QUIZ ===== */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  background-color: var(--color-beige);
+  box-sizing: border-box;
+}
+
+/* ===== HEADER (globe + croix) ===== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px 20px 0;
+  flex-shrink: 0;
+}
+
+.globeIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtnImg {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progressWrapper {
+  padding: 16px 20px 0;
+  flex-shrink: 0;
+}
+
+/* ===== ZONE QUESTION (partie haute beige) ===== */
+.questionSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 24px 32px;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.flagImage {
+  width: 100px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.questionText {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* ===== ZONE RÉPONSES (bottom sheet avec cadre-question.png) ===== */
+.answerSheet {
+  flex: 1;
+  background-image: url('/assets/components/cadre-question.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  padding: 40px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Grille 2×2 pour les réponses courtes */
+.gridAnswers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Liste empilée pour les réponses longues */
+.listAnswers {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* ===== ÉCRAN DE TRANSITION ===== */
+.transitionScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 40px 32px;
+  gap: 32px;
+  text-align: center;
+}
+
+.transitionGlobe {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.transitionTitle {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.transitionCta {
+  margin-top: 16px;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 768px) {
+  /* La partie haute (header, question) reste centrée sur 480px */
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /*
+    Le cadre de réponses doit prendre TOUTE la largeur de la fenêtre.
+    "Full-bleed technique" : on sort violemment du parent 480px avec des marges négatives.
+    margin-left/right = -(50vw - 50% du parent) → ça aligne l'élément sur les bords de la fenêtre.
+    On repasse ensuite width à 100vw pour couvrir toute la fenêtre.
+  */
+  .answerSheet {
+    background-image: url('/assets/components/cadre-question-desktop.png');
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    /* Le contenu interne reste centré et pas trop large */
+    padding-left: max(24px, calc(50vw - 280px));
+    padding-right: max(24px, calc(50vw - 280px));
+  }
+}
