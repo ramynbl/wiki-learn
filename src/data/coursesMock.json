@@ -1,0 +1,82 @@
+{
+  "geographie": [
+    {
+      "id": "belgique",
+      "title": "La Belgique",
+      "coverImage": "/assets/icons/belgique.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "La Belgique",
+          "image": "/assets/icons/belgique.png",
+          "fact": "Petit par la taille, ce royaume au cœur de l'Europe est un géant de la culture et de l'Histoire."
+        },
+        {
+          "id": 2,
+          "title": "La Capitale",
+          "image": null,
+          "fact": "Bruxelles est la capitale de la Belgique. C'est aussi le siège officiel de l'Union Européenne et de l'OTAN."
+        },
+        {
+          "id": 3,
+          "title": "Les Langues",
+          "image": null,
+          "fact": "La Belgique a 3 langues officielles : le français, le néerlandais (flamand) et l'allemand."
+        },
+        {
+          "id": 4,
+          "title": "La Gastronomie",
+          "image": null,
+          "fact": "La Belgique est mondialement connue pour ses frites, ses gaufres, ses bières et surtout son chocolat !"
+        },
+        {
+          "id": 5,
+          "title": "Le Roi",
+          "image": null,
+          "fact": "La Belgique est une monarchie constitutionnelle. Le roi actuel est Philippe Ier, sur le trône depuis 2013."
+        }
+      ]
+    },
+    {
+      "id": "venezuela",
+      "title": "Le Vénézuéla",
+      "coverImage": "/assets/icons/venezuela.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Le Vénézuéla",
+          "image": "/assets/icons/venezuela.png",
+          "fact": "Pays d'Amérique du Sud, le Vénézuéla est connu pour ses plages des Caraïbes, ses llanos et ses forêts amazoniens."
+        },
+        {
+          "id": 2,
+          "title": "La Capitale",
+          "image": null,
+          "fact": "Caracas est la capitale du Vénézuéla. Fondée en 1567, c'est l'une des plus grandes métropoles d'Amérique du Sud."
+        },
+        {
+          "id": 3,
+          "title": "Le Pétrole",
+          "image": null,
+          "fact": "Le Vénézuéla possède les plus grandes réserves de pétrole prouvées au monde, dépassant même l'Arabie Saoudite."
+        },
+        {
+          "id": 4,
+          "title": "Angel Falls",
+          "image": null,
+          "fact": "Le Salto Ángel (Angel Falls) est la plus haute chute d'eau du monde avec 979 mètres de hauteur totale."
+        },
+        {
+          "id": 5,
+          "title": "Simon Bolivar",
+          "image": null,
+          "fact": "Né à Caracas en 1783, Simon Bolivar est le héros national du Vénézuéla. Il a libéré 6 pays d'Amérique du Sud."
+        }
+      ]
+    }
+  ],
+  "informatique": [],
+  "animaux": [],
+  "espace": [],
+  "culture": []
+}

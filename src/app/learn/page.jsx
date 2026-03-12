@@ -28,7 +28,7 @@ export default function LearnPage() {
       
       <main className={styles.mainContent}>
         <Typography variant="h3" className={styles.prompt} cartoon>
-          Que voulez-vous apprendre aujourd'hui ?
+          Que voulez-vous apprendre aujourd&apos;hui ?
         </Typography>
 
         <TopicCarousel 

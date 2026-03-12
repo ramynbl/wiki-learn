@@ -1,27 +1,78 @@
 .page {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   min-height: 100vh;
   width: 100%;
+  padding: 60px 24px 80px;
+  background-color: var(--color-beige);
 }
 
-.container {
+/* Logo en haut de page */
+.logoWrapper {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+}
+
+/* On vire les bordures cartoon car c'est un PNG de logo transparent */
+.logo {
+  object-fit: contain;
+}
+
+/* Zone centrale qui prend tout l'espace disponible */
+.main {
+  display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
 }
 
-.loaderDots {
+/* Conteneur du globe */
+.globeWrapper {
   display: flex;
-  gap: 12px;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Les 7 cercles en bas */
+.dotsWrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Chaque cercle est vide. L'animation CSS le remplit de gauche à droite comme un sweep */
 .dot {
   width: 20px;
   height: 20px;
-  background-color: var(--color-primary-blue);
   border-radius: 50%;
-  border: var(--border-thickness) solid var(--color-black); /* Le style cartoon toujours présent */
+  border: 2.5px solid var(--color-black);
+  background-color: transparent;
+  animation: dotFill 1.4s infinite ease-in-out;
+}
+
+/* On décale chaque cercle avec une variable CSS pour éviter de répéter les classes */
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+.dot:nth-child(4) { animation-delay: 0.6s; }
+.dot:nth-child(5) { animation-delay: 0.8s; }
+.dot:nth-child(6) { animation-delay: 1.0s; }
+.dot:nth-child(7) { animation-delay: 1.2s; }
+
+/* Le cercle part de vide, se remplit en noir, puis revient vide */
+@keyframes dotFill {
+  0%, 100% { background-color: transparent; }
+  50%       { background-color: var(--color-black); }
+}
+
+/* Sur Desktop, on restreint la largeur mais sans les traits laids sur les côtés */
+@media (min-width: 1024px) {
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+  }
 }
