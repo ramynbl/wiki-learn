@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-light-cream);
+  width: 260px; /* Largeur fixe pour le carousel mobile */
+  flex-shrink: 0; /* Empêche l'écrasement dans flex */
+  
+  padding: 16px;
+  gap: 16px;
+  
+  /* Astuce CSS pour simuler une bordure irrégulière "dessinée à la main" */
+  border: var(--border-thickness) solid var(--color-black);
+  border-radius: 40px 15px 45px 15px / 15px 45px 15px 40px; 
+  /* Si le rendu n'est pas parfait, on repassera sur un SVG de bordure, mais c'est le standard CSS moderne pour ça ! */
+
+  box-shadow: 0 4px 0 rgba(0,0,0,0.1);
+}
+
+.imageContainer {
+  width: 100%;
+  aspect-ratio: 4/3;
+  /* On force un border radius cartoon sur l'atom ImageWrapper interne 
+     qui peut lui aussi avoir un aspect irrégulier si besoin */
+}
+
+/* Modifier l'atom image wrapper à l'intérieur */
+.imageContainer :global(.cartoon-border) {
+  border-radius: 12px 18px 12px 16px / 16px 12px 14px 18px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  text-align: center;
+}
+
+.button {
+  width: 80%; /* Le bouton ne prend pas toute la largeur */
+}

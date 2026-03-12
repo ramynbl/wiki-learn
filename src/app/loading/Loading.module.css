@@ -1,0 +1,27 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.loaderDots {
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary-blue);
+  border-radius: 50%;
+  border: var(--border-thickness) solid var(--color-black); /* Le style cartoon toujours présent */
+}

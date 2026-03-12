@@ -1,0 +1,22 @@
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  padding: 24px 0;
+  width: 100%;
+  
+  /* Masquer la scrollbar tout en gardant le scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Safari/Chrome */
+}
+
+/* Ces spacers assurent que la première et la dernière carte 
+   ne sont pas collées aux bords de l'écran lors du scroll */
+.spacer {
+  flex-shrink: 0;
+  width: 16px; /* Ajuster en fonction du padding global de la page */
+}

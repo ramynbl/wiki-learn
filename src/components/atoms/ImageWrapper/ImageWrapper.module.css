@@ -1,0 +1,15 @@
+.wrapper {
+  overflow: hidden;
+  position: relative;
+  display: flex; /* prevents line-height gap */
+  /* This component acts as a container, next/image goes inside */
+  background-color: var(--color-primary-blue); /* fallback si pas d'image */
+  width: 100%;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}

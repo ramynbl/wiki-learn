@@ -1,0 +1,23 @@
+[
+  {
+    "id": "geographie",
+    "title": "Géographie",
+    "coverImage": "/assets/illustrations/geo-cover.png",
+    "tagline": "Apprends tout sur la planète !",
+    "topicsCount": 5
+  },
+  {
+    "id": "sciences",
+    "title": "Sciences",
+    "coverImage": "/assets/illustrations/sciences-cover.png",
+    "tagline": "Découvre les mystères de l'univers",
+    "topicsCount": 8
+  },
+  {
+    "id": "histoire",
+    "title": "Histoire",
+    "coverImage": "/assets/illustrations/history-cover.png",
+    "tagline": "Voyage à travers le temps",
+    "topicsCount": 4
+  }
+]
