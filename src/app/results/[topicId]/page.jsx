@@ -77,11 +77,21 @@ export default function ResultsPage({ params }) {
       {/* ===== PHASE 1 : BRAVO — Le livre zoom + titre ===== */}
       {phase === 'bravo' && (
         <div className={styles.centerContent}>
-          {/* Le livre apparaît en zoomant depuis rien */}
+          {/* Le livre apparaît en zoomant et commence directement son rebond */}
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: 'spring', stiffness: 260, damping: 16 }}
+            animate={{ scale: 1, opacity: 1, y: [0, -12, 0] }}
+            transition={{
+              scale: { type: 'spring', stiffness: 260, damping: 16 },
+              opacity: { duration: 0.3 },
+              y: {
+                duration: 1.6,
+                repeat: Infinity,
+                ease: [0.34, 1.56, 0.64, 1],
+                repeatType: 'loop',
+                delay: 0.5, // on attend la fin du zoom pour le rebond fluide
+              }
+            }}
           >
             <Image
               src="/assets/icons/livre.png"
