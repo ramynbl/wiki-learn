@@ -86,7 +86,7 @@ export default function QuizPage({ params }) {
           setQuestionIndex((prev) => prev + 1);
           setButtonStates({});
         } else {
-          router.push(`/results/${topicId}`);
+          router.push(`/reward/${topicId}`);
         }
       }, 600);
     } else {

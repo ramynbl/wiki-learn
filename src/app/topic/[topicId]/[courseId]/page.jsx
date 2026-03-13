@@ -48,7 +48,7 @@ export default function CoursePage({ params }) {
       setDirection(1);
       setCurrentIndex((prev) => prev + 1);
     } else {
-      router.push(`/reward/${topicId}`);
+      router.push(`/quiz/${topicId}`);
     }
   };
 

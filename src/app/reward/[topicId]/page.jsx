@@ -48,7 +48,7 @@ export default function RewardPage({ params }) {
 
   // CTA → on passe au quiz (Désormais le quiz vient après la récompense)
   const handleContinue = () => {
-    router.push(`/quiz/${topicId}`);
+    router.push(`/results/${topicId}`);
   };
 
   const handleClose = () => {
