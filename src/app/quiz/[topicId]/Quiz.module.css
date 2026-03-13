@@ -2,9 +2,10 @@
 .page {
   display: flex;
   flex-direction: column;
-  min-height: 100svh;
+  min-height: 100vh;
   background-color: var(--color-beige);
   box-sizing: border-box;
+  align-items: center; /* Centrage horizontal global */
 }
 
 /* ===== HEADER (globe + croix) ===== */
@@ -13,6 +14,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 480px; /* On limite la largeur du contenu utile */
   padding: 24px 20px 0;
   flex-shrink: 0;
 }
@@ -41,6 +43,8 @@
 
 /* ===== PROGRESS BAR ===== */
 .progressWrapper {
+  width: 100%;
+  max-width: 480px;
   padding: 16px 20px 0;
   flex-shrink: 0;
 }
@@ -50,6 +54,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 480px;
   padding: 24px 24px 32px;
   gap: 16px;
   flex-shrink: 0;
@@ -72,6 +78,7 @@
 
 /* ===== ZONE RÉPONSES (bottom sheet avec cadre-question.png) ===== */
 .answerSheet {
+  width: 100%;
   flex: 1;
   background-image: url('/assets/components/cadre-question.png');
   background-size: 100% 100%;
@@ -80,23 +87,24 @@
   padding: 40px 24px 32px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
-/* Grille 2×2 pour les réponses courtes */
 .gridAnswers {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   width: 100%;
+  max-width: 440px;
 }
 
-/* Liste empilée pour les réponses longues */
 .listAnswers {
   display: flex;
   flex-direction: column;
   gap: 14px;
   width: 100%;
+  max-width: 440px;
 }
 
 /* ===== ÉCRAN DE TRANSITION ===== */
@@ -106,6 +114,8 @@
   align-items: center;
   justify-content: center;
   flex: 1;
+  width: 100%;
+  max-width: 480px;
   padding: 40px 32px;
   gap: 32px;
   text-align: center;
@@ -127,26 +137,25 @@
 }
 
 /* ===== DESKTOP ===== */
-@media (min-width: 768px) {
-  /* La partie haute (header, question) reste centrée sur 480px */
-  .page {
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  /*
-    Le cadre de réponses doit prendre TOUTE la largeur de la fenêtre.
-    "Full-bleed technique" : on sort violemment du parent 480px avec des marges négatives.
-    margin-left/right = -(50vw - 50% du parent) → ça aligne l'élément sur les bords de la fenêtre.
-    On repasse ensuite width à 100vw pour couvrir toute la fenêtre.
-  */
+@media (min-width: 1024px) {
   .answerSheet {
     background-image: url('/assets/components/cadre-question-desktop.png');
+    /* On force le plein écran quoi qu'il arrive (full-bleed technique) */
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     width: 100vw;
-    /* Le contenu interne reste centré et pas trop large */
+    /* On ajuste le padding interne pour que les boutons restent centrés sur 560px max environ */
     padding-left: max(24px, calc(50vw - 280px));
     padding-right: max(24px, calc(50vw - 280px));
+  }
+}
+
+/* Très grands écrans (1900px+ ou écrans larges) */
+@media (min-width: 1440px) and (min-height: 900px) {
+  .header, .progressWrapper, .questionSection, .transitionScreen {
+    max-width: 580px; /* Plus large pour les écrans géants */
+  }
+  .gridAnswers, .listAnswers {
+    max-width: 520px;
   }
 }
