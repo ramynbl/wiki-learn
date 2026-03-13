@@ -13,6 +13,7 @@ export default function Button({
   variant = 'primary',
   disabled = false,
   className = '',
+  fullWidth = false,
   // Parfois un bouton dans un Quiz peut devenir rouge :
   isError = false
 }) {
@@ -22,6 +23,7 @@ export default function Button({
     ${styles.button} 
     ${styles[variant]} 
     ${isError ? styles.error : ''} 
+    ${fullWidth ? styles.fullWidth : ''}
     cartoon-border 
     ${className}
   `.trim();

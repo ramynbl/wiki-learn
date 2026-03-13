@@ -62,57 +62,6 @@
   font-size: 1.3rem;
 }
 
-/* CTA blanc "Oui" */
-.ctaWhite {
-  width: 100%;
-  padding: 16px 24px;
-  background-color: #FFFFFF;
-  border: 2px solid #000;
-  border-radius: 19px;
-  box-shadow: 4px 4px 0px #000;
-  cursor: pointer;
-  font-family: var(--font-lexend), sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #000;
-  text-align: center;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.ctaWhite:active {
-  box-shadow: 2px 2px 0px #000;
-  transform: translate(2px, 2px);
-}
-
-/* CTA bleu "Non" */
-.ctaBlue {
-  width: 100%;
-  padding: 16px 24px;
-  background-color: #5AADDD;
-  border: 2px solid #000;
-  border-radius: 19px;
-  box-shadow: 4px 4px 0px #000;
-  cursor: pointer;
-  font-family: var(--font-lexend), sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.ctaBlue:active {
-  box-shadow: 2px 2px 0px #000;
-  transform: translate(2px, 2px);
-}
-
-/* Hover desktop */
-.ctaWhite:hover,
-.ctaBlue:hover {
-  transform: translateY(-3px);
-  box-shadow: 5px 5px 0px #000;
-}
-
 /* ===== DESKTOP ===== */
 @media (min-width: 768px) {
   .page {

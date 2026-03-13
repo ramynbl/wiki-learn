@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Typography from '../../../components/atoms/Typography/Typography';
+import Button from '../../../components/atoms/Button/Button';
 import styles from './Exit.module.css';
 
 /**
@@ -130,26 +131,26 @@ export default function ExitPage({ params }) {
         </motion.div>
 
         {/* CTA Oui — bouton blanc → retour accueil */}
-        <motion.button
-          className={styles.ctaWhite}
-          onClick={handleYes}
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.4 }}
         >
-          Oui
-        </motion.button>
+          <Button variant="secondary" fullWidth onClick={handleYes}>
+            Oui
+          </Button>
+        </motion.div>
 
         {/* CTA Non — bouton bleu → retour page précédente */}
-        <motion.button
-          className={styles.ctaBlue}
-          onClick={handleNo}
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.55 }}
         >
-          Non
-        </motion.button>
+          <Button variant="primary" fullWidth onClick={handleNo}>
+            Non
+          </Button>
+        </motion.div>
       </div>
 
     </div>

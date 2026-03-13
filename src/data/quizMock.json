@@ -50,5 +50,238 @@
         "correctAnswer": "Le Salto Ángel, la plus haute chute d'eau du monde"
       }
     ]
+  },
+  "informatique": {
+    "wifi": [
+      {
+        "id": 1,
+        "question": "Que signifie réellement l'abréviation « Wi-Fi » ?",
+        "options": ["Fidélité Sans-fil", "Fréquence Internet", "Absolument rien", "Réseau Local"],
+        "correctAnswer": "Absolument rien"
+      },
+      {
+        "id": 2,
+        "question": "Quelle star d'Hollywood a co-inventé le principe utilisé par le Wi-Fi ?",
+        "options": ["Marilyn Monroe", "Hedy Lamarr", "Audrey Hepburn", "Grace Kelly"],
+        "correctAnswer": "Hedy Lamarr"
+      },
+      {
+        "id": 3,
+        "question": "Quelle est la vitesse maximale théorique du Wi-Fi 7 ?",
+        "options": ["10 Gbit/s", "20 Gbit/s", "46 Gbit/s", "100 Gbit/s"],
+        "correctAnswer": "46 Gbit/s"
+      }
+    ],
+    "visiophonie": [
+      {
+        "id": 4,
+        "question": "Pourquoi la toute première webcam a-t-elle été inventée en 1991 ?",
+        "options": [
+          "Pour surveiller une cafetière",
+          "Pour faire des visioconférences",
+          "Pour un projet militaire",
+          "Pour espionner les voisins"
+        ],
+        "correctAnswer": "Pour surveiller une cafetière"
+      },
+      {
+        "id": 5,
+        "question": "Pourquoi la visiophonie n'a-t-elle pas décollé avec la 3G ?",
+        "options": [
+          "La technologie était trop chère",
+          "Les téléphones n'avaient pas de caméra",
+          "L'usage ne s'est démocratisé qu'avec la 4G et les apps IP",
+          "La 3G n'existait pas encore"
+        ],
+        "correctAnswer": "L'usage ne s'est démocratisé qu'avec la 4G et les apps IP"
+      },
+      {
+        "id": 6,
+        "question": "Quel inventeur avait conçu un « téléphonoscope » qui n'était en réalité qu'un simple mégaphone ?",
+        "options": ["Nikola Tesla", "Thomas Edison", "Alexander Graham Bell", "Guglielmo Marconi"],
+        "correctAnswer": "Thomas Edison"
+      }
+    ]
+  },
+  "animaux": {
+    "requin": [
+      {
+        "id": 1,
+        "question": "De quoi est composé l'intégralité du squelette d'un requin ?",
+        "options": ["D'os", "De cartilage", "De fer", "De magnésium"],
+        "correctAnswer": "De cartilage"
+      },
+      {
+        "id": 2,
+        "question": "Comment fonctionne la dentition des requins ?",
+        "options": [
+          "Leurs dents poussent en continu comme sur un tapis roulant",
+          "Ils n'ont qu'une seule rangée de dents pour toute leur vie",
+          "Ils perdent leurs dents et ne peuvent plus manger en vieillissant",
+          "Ils ont plus de dents"
+        ],
+        "correctAnswer": "Leurs dents poussent en continu comme sur un tapis roulant"
+      },
+      {
+        "id": 3,
+        "question": "Statistiquement, quel événement est plus probable que de mourir d'une attaque de requin ?",
+        "options": [
+          "Être écrasé par un distributeur automatique de boissons",
+          "Se transformer soi-même en requin",
+          "Gagner deux fois de suite à la loterie nationale",
+          "Voir un extraterrestre"
+        ],
+        "correctAnswer": "Être écrasé par un distributeur automatique de boissons"
+      }
+    ],
+    "chat": [
+      {
+        "id": 4,
+        "question": "Quel est l'effet thérapeutique surprenant du ronronnement des chats ?",
+        "options": [
+          "Il peut accélérer la guérison de leurs os et apaiser le stress humain",
+          "Il permet de détecter les tremblements de terre",
+          "Il recharge les batteries des appareils électroniques à proximité",
+          "Il permet d'arrêter la pluie"
+        ],
+        "correctAnswer": "Il peut accélérer la guérison de leurs os et apaiser le stress humain"
+      },
+      {
+        "id": 5,
+        "question": "Pourquoi les chats retombent-ils presque toujours sur leurs pattes ?",
+        "options": [
+          "Parce qu'ils ont des ventouses invisibles sous les coussinets",
+          "Parce qu'ils refusent tout simplement de toucher le sol sur le dos",
+          "Grâce à leur réflexe de redressement et leur colonne vertébrale ultra-flexible",
+          "Parce qu'ils sont boostés"
+        ],
+        "correctAnswer": "Grâce à leur réflexe de redressement et leur colonne vertébrale ultra-flexible"
+      },
+      {
+        "id": 6,
+        "question": "Quelle partie du corps du chat est aussi unique qu'une empreinte digitale ?",
+        "options": ["Le bout de sa queue", "Sa truffe", "Ses moustaches", "Ses coussinets"],
+        "correctAnswer": "Sa truffe"
+      }
+    ]
+  },
+  "espace": {
+    "trou-noir": [
+      {
+        "id": 1,
+        "question": "Quel est le nom et la distance du trou noir le plus proche de nous ?",
+        "options": [
+          "Sagittarius A* (26 000 années-lumière)",
+          "Gaia BH1 (environ 1560 années-lumière)",
+          "Cygnus X-1 (6000 années-lumière)",
+          "Messier 87 (55 millions d'années-lumière)"
+        ],
+        "correctAnswer": "Gaia BH1 (environ 1560 années-lumière)"
+      },
+      {
+        "id": 2,
+        "question": "Qu'est-ce que l'effet « spaghettification » ?",
+        "options": [
+          "Un phénomène où un objet est étiré par la gravité extrême d'un trou noir",
+          "Une explosion d'étoile proche d'un trou noir",
+          "La transformation d'un trou noir en étoile",
+          "Une émission de lumière intense"
+        ],
+        "correctAnswer": "Un phénomène où un objet est étiré par la gravité extrême d'un trou noir"
+      },
+      {
+        "id": 3,
+        "question": "Si on compressait la Terre pour en faire un trou noir, quelle serait sa taille ?",
+        "options": ["Un terrain de football", "Une pomme", "Une bille", "Un grain de sable"],
+        "correctAnswer": "Une bille"
+      }
+    ],
+    "big-bang": [
+      {
+        "id": 4,
+        "question": "Le Big Bang est-il une explosion dans l'espace ?",
+        "options": [
+          "Oui, une détonation",
+          "Expansion de l'espace lui-même",
+          "Un flash lumineux",
+          "Un trou noir"
+        ],
+        "correctAnswer": "Expansion de l'espace lui-même"
+      },
+      {
+        "id": 5,
+        "question": "Comment appelle-t-on la trace de chaleur résiduelle du Big Bang encore visible aujourd'hui ?",
+        "options": [
+          "Le vent solaire",
+          "Le rayonnement Gamma",
+          "Le fond diffus cosmologique",
+          "L'onde de choc primordiale"
+        ],
+        "correctAnswer": "Le fond diffus cosmologique"
+      },
+      {
+        "id": 6,
+        "question": "Quelle est l'origine ironique du nom « Big Bang » ?",
+        "options": [
+          "Une bande dessinée",
+          "Une erreur de traduction",
+          "Fred Hoyle, un scientifique qui se moquait de la théorie",
+          "Un club de jazz"
+        ],
+        "correctAnswer": "Fred Hoyle, un scientifique qui se moquait de la théorie"
+      }
+    ]
+  },
+  "culture": {
+    "punk": [
+      {
+        "id": 1,
+        "question": "Quelle est la philosophie centrale du mouvement punk concernant la création ?",
+        "options": ["Perfection technique", "Do It Yourself", "Succès commercial", "Rigueur académique"],
+        "correctAnswer": "Do It Yourself"
+      },
+      {
+        "id": 2,
+        "question": "Que signifiait à l'origine le mot « punk » en argot anglais ?",
+        "options": ["Jeune rebelle", "Musicien libre", "Petit voyou", "Génie incompris"],
+        "correctAnswer": "Petit voyou"
+      },
+      {
+        "id": 3,
+        "question": "Quelle était la différence majeure entre le rock classique et le rock punk ?",
+        "options": ["Chansons longues", "Solos complexes", "Rapidité brute", "Textes poétiques"],
+        "correctAnswer": "Rapidité brute"
+      }
+    ],
+    "asap-rocky": [
+      {
+        "id": 4,
+        "question": "Quel est le vrai nom d'A$AP Rocky ?",
+        "options": [
+          "Rakim Athelaston Mayers",
+          "Shawn Corey Carter",
+          "William Leonard Roberts",
+          "Kendrick Lamar Duckworth"
+        ],
+        "correctAnswer": "Rakim Athelaston Mayers"
+      },
+      {
+        "id": 5,
+        "question": "Dans quel quartier de New York A$AP Rocky a-t-il grandi ?",
+        "options": ["Brooklyn", "Harlem", "Le Bronx", "Queens"],
+        "correctAnswer": "Harlem"
+      },
+      {
+        "id": 6,
+        "question": "Qu'est-ce qui distingue A$AP Rocky des autres rappeurs selon sa carte d'identité artistique ?",
+        "options": [
+          "Un rap entre luxe, image et mode",
+          "Une carrière exclusivement underground",
+          "Des textes exclusivement politiques",
+          "Un style proche du rock"
+        ],
+        "correctAnswer": "Un rap entre luxe, image et mode"
+      }
+    ]
   }
 }

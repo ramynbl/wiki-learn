@@ -158,7 +158,30 @@ export default function CoursePage({ params }) {
               />
             )}
 
-            <p className={styles.factText}>{currentCard.fact}</p>
+            {/* Rendu dynamique du texte (gestion des listes à puces) */}
+            {(() => {
+              const text = currentCard.fact || "";
+              if (!text.includes('•')) {
+                return <p className={styles.factText}>{text}</p>;
+              }
+
+              const parts = text.split('•');
+              const intro = parts[0].trim();
+              const items = parts.slice(1).map(it => it.trim()).filter(Boolean);
+
+              return (
+                <div className={styles.factWrapper}>
+                  {intro && <p className={styles.factText}>{intro}</p>}
+                  <ul className={styles.factList}>
+                    {items.map((item, idx) => (
+                      <li key={idx} className={styles.factItem}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })()}
 
             <Typography variant="h2" className={styles.counter} cartoon>
               {currentIndex + 1}/{totalCards}

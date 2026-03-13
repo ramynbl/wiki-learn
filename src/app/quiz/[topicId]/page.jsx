@@ -10,6 +10,7 @@ import Button from '../../../components/atoms/Button/Button';
 import Typography from '../../../components/atoms/Typography/Typography';
 import { useAppStore } from '../../../store/useAppStore';
 import quizMock from '../../../data/quizMock.json';
+import coursesMock from '../../../data/coursesMock.json';
 import { pickRandom, isShortAnswer } from '../../../utils/quizHelpers';
 import styles from './Quiz.module.css';
 
@@ -48,12 +49,20 @@ export default function QuizPage({ params }) {
     return pickRandom(courseQuestions, QUIZ_COUNT);
   }, [topicId, selectedCourseId]);
 
-  // L'image du drapeau dépend du cours sélectionné
-  const flagImage = selectedCourseId
-    ? `/assets/icons/${selectedCourseId}.png`
-    : '/assets/illustrations/planete.png';
-
   const currentQuestion = questions[questionIndex];
+
+  // L'image du drapeau dépend du cours sélectionné ou de la question spécifique
+  const flagImage = useMemo(() => {
+    // 1. Si la question a sa propre image (ex: dans quizMock.json)
+    if (currentQuestion?.image) return currentQuestion.image;
+
+    // 2. Sinon, on essaie de trouver l'icône du cours dans coursesMock
+    const course = coursesMock[topicId]?.find(c => c.id === selectedCourseId);
+    if (course?.coverImage) return course.coverImage;
+
+    // 3. Fallback final
+    return '/assets/illustrations/planete.png';
+  }, [currentQuestion, topicId, selectedCourseId]);
 
   // La barre du quiz est séparée de celle des fiches — 3 étapes, on repart de zéro
   const progressCurrent = questionIndex;

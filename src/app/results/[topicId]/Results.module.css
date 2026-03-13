@@ -62,6 +62,56 @@
 .mainTitle {
   text-align: center;
   line-height: 1.35;
+  position: relative;
+  z-index: 10; /* Toujours au dessus de l'explosion */
+}
+
+/* Zone pour le livre + explosion */
+.rewardWrapper {
+  position: relative;
+  width: 320px;
+  height: 420px; /* Augmenté pour éviter que l'explosion ne mange le texte */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px; 
+}
+
+.bookWrapper {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.explosionContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.explosionWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.explosionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.95;
 }
 
 /* Texte d'engagement (phase 2) */
@@ -73,6 +123,8 @@
   text-align: center;
   line-height: 1.5;
   max-width: 320px;
+  position: relative;
+  z-index: 10; /* Devant l'explosion */
 }
 
 /* ===== PHASE 3 : ZONE CHOIX ===== */
@@ -109,57 +161,6 @@
   line-height: 1.4;
 }
 
-/* CTA blanc "Continuer" */
-.ctaWhite {
-  width: 100%;
-  padding: 16px 24px;
-  background-color: #FFFFFF;
-  border: 2px solid #000000;
-  border-radius: 19px;
-  box-shadow: 4px 4px 0px #000000;
-  cursor: pointer;
-  font-family: var(--font-lexend), sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #000000;
-  text-align: center;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.ctaWhite:active {
-  box-shadow: 2px 2px 0px #000000;
-  transform: translate(2px, 2px);
-}
-
-/* CTA bleu "Se connecter" */
-.ctaBlue {
-  width: 100%;
-  padding: 16px 24px;
-  background-color: #5AADDD;
-  border: 2px solid #000000;
-  border-radius: 19px;
-  box-shadow: 4px 4px 0px #000000;
-  cursor: pointer;
-  font-family: var(--font-lexend), sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #FFFFFF;
-  text-align: center;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.ctaBlue:active {
-  box-shadow: 2px 2px 0px #000000;
-  transform: translate(2px, 2px);
-}
-
-/* Hover desktop pour les CTA */
-.ctaWhite:hover,
-.ctaBlue:hover {
-  transform: translateY(-3px);
-  box-shadow: 5px 5px 0px #000000;
-}
-
 /* ===== DESKTOP ===== */
 @media (min-width: 768px) {
   .page {
@@ -168,8 +169,19 @@
   }
 
   .heroImage {
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .rewardWrapper {
+    width: 100%;
+    height: 400px;
+    margin-top: 0;
+  }
+
+  .explosionContainer {
+    width: 500px;
+    height: 500px;
   }
 
   .choiceSection {

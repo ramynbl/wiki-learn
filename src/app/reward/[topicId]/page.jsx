@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Typography from '../../../components/atoms/Typography/Typography';
+import Button from '../../../components/atoms/Button/Button';
 import styles from './Reward.module.css';
 
 /**
@@ -201,15 +202,15 @@ export default function RewardPage({ params }) {
           </motion.div>
 
           {/* CTA Continuer */}
-          <motion.button
-            className={styles.ctaBlue}
-            onClick={handleContinue}
+          <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: 'spring', stiffness: 280, damping: 18, delay: 0.7 }}
           >
-            Continuer
-          </motion.button>
+            <Button variant="primary" fullWidth onClick={handleContinue}>
+              Continuer
+            </Button>
+          </motion.div>
         </div>
       )}
 

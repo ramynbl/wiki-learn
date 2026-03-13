@@ -83,7 +83,7 @@
       "cards": [
         {
           "id": 1,
-          "title": "Introduction",
+          "title": "La Wifi",
           "image": "/assets/icons/wifi-router.png",
           "fact": "Bienvenue dans le monde sans fil ! Cette technologie magique nous connecte tous à Internet grâce à de simples ondes radio."
         },
@@ -120,7 +120,7 @@
       "cards": [
         {
           "id": 1,
-          "title": "Introduction",
+          "title": "La Visiophonie",
           "image": "/assets/icons/visio.png",
           "fact": "Se voir en se parlant ! Née d'un rêve, l'association de la téléphonie et de la télévision a changé le monde."
         },
@@ -159,7 +159,7 @@
       "cards": [
         {
           "id": 1,
-          "title": "Introduction",
+          "title": "Le Requin",
           "image": "/assets/icons/requin.png",
           "fact": "Plongeons à la découverte des requins ! Ces poissons fascinants et redoutés règnent en maîtres sur les océans du monde."
         },
@@ -196,7 +196,7 @@
       "cards": [
         {
           "id": 1,
-          "title": "Introduction",
+          "title": "Le Chat",
           "image": "/assets/icons/chat.png",
           "fact": "Bienvenue dans le monde des félins ! Mystérieux, agiles et adorables, les chats sont nos compagnons de salon préférés."
         },
@@ -230,12 +230,12 @@
   "espace": [
     {
       "id": "trou-noir",
-      "title": "Trou noir",
+      "title": "Le Trou Noir",
       "coverImage": "/assets/icons/trou-noir.png",
       "cards": [
         {
           "id": 1,
-          "title": "Introduction",
+          "title": "Le Trou Noir",
           "image": "/assets/icons/trou-noir.png",
           "fact": "Plongez dans le mystère absolu ! Ces ogres cosmiques ont une gravité si forte que rien ne leur échappe, pas même la lumière."
         },
@@ -267,12 +267,12 @@
     },
     {
       "id": "big-bang",
-      "title": "Big bang",
+      "title": "Le Big Bang",
       "coverImage": "/assets/icons/big-bang.png",
       "cards": [
         {
           "id": 1,
-          "title": "Introduction",
+          "title": "Le Big Bang",
           "image": "/assets/icons/big-bang.png",
           "fact": "Prêt pour le voyage ultime ? C'est le modèle scientifique qui explique l'origine et l'évolution de notre Univers !"
         },
@@ -311,7 +311,7 @@
       "cards": [
         {
           "id": 1,
-          "title": "Introduction",
+          "title": "Le Punk",
           "image": "/assets/icons/punk2.png",
           "fact": "Prêt à faire du bruit ? Né dans les années 70, le punk est une révolution musicale et une véritable rébellion culturelle !"
         },
@@ -343,12 +343,12 @@
     },
     {
       "id": "asap-rocky",
-      "title": "Asap Rocky",
+      "title": "A$AP Rocky",
       "coverImage": "/assets/icons/asaprocky.png",
       "cards": [
         {
           "id": 1,
-          "title": "Introduction",
+          "title": "A$AP Rocky",
           "image": "/assets/icons/asaprocky.png",
           "fact": "Plus qu'un simple rappeur! A$AP Rocky est une figure majeure du hip-hop contemporain, à la croisée de la musique, de la mode et de la culture visuelle."
         },

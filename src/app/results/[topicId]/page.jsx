@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Typography from '../../../components/atoms/Typography/Typography';
+import Button from '../../../components/atoms/Button/Button';
 import { useAppStore } from '../../../store/useAppStore';
 import styles from './Results.module.css';
 
@@ -77,31 +78,60 @@ export default function ResultsPage({ params }) {
       {/* ===== PHASE 1 : BRAVO — Le livre zoom + titre ===== */}
       {phase === 'bravo' && (
         <div className={styles.centerContent}>
-          {/* Le livre apparaît en zoomant et commence directement son rebond */}
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1, y: [0, -12, 0] }}
-            transition={{
-              scale: { type: 'spring', stiffness: 260, damping: 16 },
-              opacity: { duration: 0.3 },
-              y: {
-                duration: 1.6,
-                repeat: Infinity,
-                ease: [0.34, 1.56, 0.64, 1],
-                repeatType: 'loop',
-                delay: 0.5, // on attend la fin du zoom pour le rebond fluide
-              }
-            }}
-          >
-            <Image
-              src="/assets/icons/livre.png"
-              alt="Livre récupéré"
-              width={160}
-              height={160}
-              className={styles.heroImage}
-              unoptimized
-            />
-          </motion.div>
+          {/* Container pour le livre + explosion */}
+          <div className={styles.rewardWrapper}>
+
+            {/* Explosion en arrière-plan (statique pour le centrage, motion pour l'anime) */}
+            <div className={styles.explosionContainer}>
+              <motion.div
+                className={styles.explosionWrapper}
+                animate={{
+                  rotate: 360,
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  rotate: { duration: 10, repeat: Infinity, ease: 'linear' },
+                  scale: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
+                }}
+              >
+                <Image
+                  src="/assets/components/explosion-2.png"
+                  alt="Explosion"
+                  width={400}
+                  height={400}
+                  className={styles.explosionImage}
+                  unoptimized
+                />
+              </motion.div>
+            </div>
+
+            {/* Le livre apparaît en zoomant et commence directement son rebond */}
+            <motion.div
+              className={styles.bookWrapper}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1, y: [0, -12, 0] }}
+              transition={{
+                scale: { type: 'spring', stiffness: 260, damping: 16 },
+                opacity: { duration: 0.3 },
+                y: {
+                  duration: 1.6,
+                  repeat: Infinity,
+                  ease: [0.34, 1.56, 0.64, 1],
+                  repeatType: 'loop',
+                  delay: 0.5,
+                }
+              }}
+            >
+              <Image
+                src="/assets/icons/livre.png"
+                alt="Livre récupéré"
+                width={160}
+                height={160}
+                className={styles.heroImage}
+                unoptimized
+              />
+            </motion.div>
+          </div>
 
           {/* Le titre slide en dessous */}
           <motion.div
@@ -119,25 +149,51 @@ export default function ResultsPage({ params }) {
       {/* ===== PHASE 2 : ENGAGE — Motiver l'utilisateur ===== */}
       {phase === 'engage' && (
         <div className={styles.centerContent}>
-          {/* Le livre bounce tout doucement en boucle */}
-          <motion.div
-            animate={{ y: [0, -12, 0] }}
-            transition={{
-              duration: 1.6,
-              repeat: Infinity,
-              ease: [0.34, 1.56, 0.64, 1],
-              repeatType: 'loop',
-            }}
-          >
-            <Image
-              src="/assets/icons/livre.png"
-              alt="Livre"
-              width={160}
-              height={160}
-              className={styles.heroImage}
-              unoptimized
-            />
-          </motion.div>
+          {/* Container pour le livre + explosion (Phase Engage) */}
+          <div className={styles.rewardWrapper}>
+            <div className={styles.explosionContainer}>
+              <motion.div
+                className={styles.explosionWrapper}
+                animate={{
+                  rotate: 360,
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  rotate: { duration: 10, repeat: Infinity, ease: 'linear' },
+                  scale: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
+                }}
+              >
+                <Image
+                  src="/assets/components/explosion-2.png"
+                  alt="Explosion"
+                  width={400}
+                  height={400}
+                  className={styles.explosionImage}
+                  unoptimized
+                />
+              </motion.div>
+            </div>
+
+            <motion.div
+              className={styles.bookWrapper}
+              animate={{ y: [0, -12, 0] }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: [0.34, 1.56, 0.64, 1],
+                repeatType: 'loop',
+              }}
+            >
+              <Image
+                src="/assets/icons/livre.png"
+                alt="Livre"
+                width={160}
+                height={160}
+                className={styles.heroImage}
+                unoptimized
+              />
+            </motion.div>
+          </div>
 
           {/* Texte d'engagement + fade in */}
           <motion.p
@@ -150,15 +206,15 @@ export default function ResultsPage({ params }) {
           </motion.p>
 
           {/* CTA "Continuer" → passe à la phase choix */}
-          <motion.button
-            className={styles.ctaWhite}
-            onClick={() => setPhase('choice')}
+          <motion.div
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ type: 'spring', stiffness: 280, damping: 18, delay: 0.45 }}
           >
-            Continuer
-          </motion.button>
+            <Button variant="secondary" fullWidth onClick={() => setPhase('choice')}>
+              Continuer
+            </Button>
+          </motion.div>
         </div>
       )}
 
@@ -207,9 +263,9 @@ export default function ResultsPage({ params }) {
             <div className={styles.choiceBlock}>
               <p className={styles.choiceLabel}>Continuer d&apos;apprendre</p>
               <p className={styles.choiceDescription}>Ne sauvegarde pas la progression</p>
-              <button className={styles.ctaWhite} onClick={handleContinue}>
+              <Button variant="secondary" fullWidth onClick={handleContinue}>
                 Continuer
-              </button>
+              </Button>
             </div>
 
             {/* Option 2 : Se connecter pour sauvegarder */}
@@ -218,9 +274,9 @@ export default function ResultsPage({ params }) {
               <p className={styles.choiceDescription}>
                 Sauvegarde ta progression pour remporter des récompenses
               </p>
-              <button className={styles.ctaBlue} onClick={handleLogin}>
+              <Button variant="primary" fullWidth onClick={handleLogin}>
                 Se connecter
-              </button>
+              </Button>
             </div>
           </motion.div>
         </div>

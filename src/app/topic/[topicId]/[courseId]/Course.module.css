@@ -175,6 +175,42 @@
   text-align: center;
   line-height: 1.65;
   color: var(--color-black);
+  margin: 0;
+}
+
+.factWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.factList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.factItem {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-black);
+  position: relative;
+  padding-left: 24px;
+}
+
+.factItem::before {
+  content: "•";
+  position: absolute;
+  left: 6px;
+  font-weight: 900;
 }
 
 /* Compteur "1/5" en bas à droite */
