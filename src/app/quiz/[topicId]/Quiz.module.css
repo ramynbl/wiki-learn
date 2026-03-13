@@ -118,12 +118,8 @@
 }
 
 .transitionTitle {
-  font-family: var(--font-lexend), sans-serif;
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: white;
   text-align: center;
-  line-height: 1.4;
+  font-size: 1.35rem;
 }
 
 .transitionCta {

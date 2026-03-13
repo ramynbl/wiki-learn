@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useState } from 'react';
+import { use, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
@@ -21,11 +21,16 @@ export default function CoursePage({ params }) {
   const course = courses.find((c) => c.id === courseId);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  // La direction sert à animer la carte dans le bon sens (gauche ou droite)
   const [direction, setDirection] = useState(1);
 
+  // Redirection si cours introuvable
+  useEffect(() => {
+    if (!course || course.cards.length === 0) {
+      router.push('/learn');
+    }
+  }, [course, router]);
+
   if (!course || course.cards.length === 0) {
-    router.push('/learn');
     return null;
   }
 
@@ -43,7 +48,7 @@ export default function CoursePage({ params }) {
       setDirection(1);
       setCurrentIndex((prev) => prev + 1);
     } else {
-      router.push(`/quiz/${topicId}`);
+      router.push(`/reward/${topicId}`);
     }
   };
 
@@ -55,7 +60,7 @@ export default function CoursePage({ params }) {
     }
   };
 
-  const handleClose = () => router.push('/learn');
+  const handleClose = () => router.push(`/exit/${topicId}`);
 
   // Variantes d'animation selon la direction (gauche ou droite)
   const slideVariants = {

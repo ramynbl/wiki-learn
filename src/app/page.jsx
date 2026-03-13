@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
 export default async function Home() {
-  // Une simple redirection côté serveur vers la vue /learn
-  redirect('/learn');
+  // On envoie vers l'intro vidéo dès l'arrivée sur le site
+  redirect('/intro');
   return null;
 }

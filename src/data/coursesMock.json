@@ -13,27 +13,27 @@
         },
         {
           "id": 2,
-          "title": "La Capitale",
+          "title": "Le passeport belge.",
           "image": null,
-          "fact": "Bruxelles est la capitale de la Belgique. C'est aussi le siège officiel de l'Union Européenne et de l'OTAN."
+          "fact": "Voici les mensurations de ce petit pays : • 📍 Capitale : Bruxelles • 📏 Superficie : 30 528 km² • 👥 Population : ~11,8 millions d'hab. • 🏙️ Densité : 385 hab./km² • ⏳ Espérance de vie : + de 80 ans Un pays très compact, mais un vrai poids lourd au centre de l'Europe !"
         },
         {
           "id": 3,
           "title": "Les Langues",
           "image": null,
-          "fact": "La Belgique a 3 langues officielles : le français, le néerlandais (flamand) et l'allemand."
+          "fact": "Un puzzle linguistique. La Belgique est un véritable carrefour culturel ! On n'y parle pas « belge », mais trois langues officielles : le néerlandais au nord, le français au sud et l'allemand à l'est. Cette diversité unique oblige le pays à adopter un système politique complexe, divisé en trois régions distinctes."
         },
         {
           "id": 4,
           "title": "La Gastronomie",
           "image": null,
-          "fact": "La Belgique est mondialement connue pour ses frites, ses gaufres, ses bières et surtout son chocolat !"
+          "fact": "Le cœur de l'Europe pendant des siècles, la Belgique a été surnommée le « champ de bataille de l'Europe ». De Waterloo aux guerres mondiales, les grandes puissances s'y sont affrontées. Aujourd'hui, c'est l'inverse : Bruxelles est la capitale de la diplomatie européenne, abritant les sièges de l'UE et de l'OTAN !"
         },
         {
           "id": 5,
           "title": "Le Roi",
           "image": null,
-          "fact": "La Belgique est une monarchie constitutionnelle. Le roi actuel est Philippe Ier, sur le trône depuis 2013."
+          "fact": "Le record sans gouvernement. Pour briller en soirée : savais-tu que la Belgique détient un record du monde bluffant ? Le pays a fonctionné sans gouvernement de plein exercice pendant 541 jours (2010-2011) ! Le plus fou ? Tout a continué de tourner normalement grâce aux ministres en « affaires courantes ». Un chaos organisé !"
         }
       ]
     },
@@ -46,37 +46,337 @@
           "id": 1,
           "title": "Le Vénézuéla",
           "image": "/assets/icons/venezuela.png",
-          "fact": "Pays d'Amérique du Sud, le Vénézuéla est connu pour ses plages des Caraïbes, ses llanos et ses forêts amazoniens."
+          "fact": "Prêt à découvrir le Venezuela ? Au nord de l'Amérique du Sud, ce pays de contrastes s'ouvre sur les Caraïbes et reste marqué par le pétrole."
         },
         {
           "id": 2,
-          "title": "La Capitale",
+          "title": "Le Venezuela en bref",
           "image": null,
-          "fact": "Caracas est la capitale du Vénézuéla. Fondée en 1567, c'est l'une des plus grandes métropoles d'Amérique du Sud."
+          "fact": ". Voici sa carte d'identité : • Capitale : Caracas • Localisation : nord de l'Amérique du Sud • Façade maritime : mer des Caraïbes et océan Atlantique • Ressource clé : pétrole • Particularité : membre fondateur de l'OPEP"
         },
         {
           "id": 3,
-          "title": "Le Pétrole",
+          "title": "Un pays de paysages spectaculaires",
           "image": null,
-          "fact": "Le Vénézuéla possède les plus grandes réserves de pétrole prouvées au monde, dépassant même l'Arabie Saoudite."
+          "fact": ".Le Venezuela se distingue par une grande diversité géographique. Le parc national de Canaima, classé au patrimoine mondial de l'UNESCO, couvre environ 3 millions d'hectares et abrite les tepuis, formations tabulaires emblématiques. On y trouve aussi le Salto Ángel, présenté par l'UNESCO comme la plus haute chute d'eau du monde."
         },
         {
           "id": 4,
-          "title": "Angel Falls",
+          "title": "Le pétrole comme marqueur historique.",
           "image": null,
-          "fact": "Le Salto Ángel (Angel Falls) est la plus haute chute d'eau du monde avec 979 mètres de hauteur totale."
+          "fact": "Le Venezuela occupe une place centrale dans l'histoire pétrolière mondiale. L'OPEP le présente comme l'un de ses membres fondateurs et souligne l'ampleur de ses réserves. Cette ressource a profondément structuré son économie, son insertion internationale et une large part de son histoire contemporaine."
         },
         {
           "id": 5,
-          "title": "Simon Bolivar",
+          "title": "L'origine du nom \"Venezuela\".",
           "image": null,
-          "fact": "Né à Caracas en 1783, Simon Bolivar est le héros national du Vénézuéla. Il a libéré 6 pays d'Amérique du Sud."
+          "fact": "Sais-tu d'où vient ce nom ? Selon les sources encyclopédiques de référence, \"Venezuela\" signifie \"Petite Venise\". L'appellation aurait été donnée par les Espagnols après l'observation d'habitations sur pilotis dans la région du lac Maracaibo, qui leur rappelaient Venise."
         }
       ]
     }
   ],
-  "informatique": [],
-  "animaux": [],
-  "espace": [],
-  "culture": []
+  "informatique": [
+    {
+      "id": "wifi",
+      "title": "Wifi",
+      "coverImage": "/assets/icons/wifi-router.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "image": "/assets/icons/wifi-router.png",
+          "fact": "Bienvenue dans le monde sans fil ! Cette technologie magique nous connecte tous à Internet grâce à de simples ondes radio."
+        },
+        {
+          "id": 2,
+          "title": "Le réseau en chiffres.",
+          "image": "/assets/icons/wifi-router.png",
+          "fact": "Voici la fiche technique de notre connexion adorée : • 🎂 Création : 1999 (pour le nom officiel) • 📡 Fréquences : 2,4 GHz, 5 GHz et 6 GHz • 📏 Portée : ~35 mètres en intérieur • 🚀 Vitesse max : Jusqu'à 46 Gbit/s (avec le Wi-Fi 7) Des ondes invisibles qui font tourner le monde moderne !"
+        },
+        {
+          "id": 3,
+          "title": "L'illusion du nom.",
+          "image": "/assets/icons/wifi-router.png",
+          "fact": "Contrairement à la croyance populaire, Wi-Fi ne signifie absolument pas Wireless Fidelity ! C'est un mythe. Le nom a été inventé par une agence de publicité. Les créateurs voulaient juste un nom plus accrocheur que la véritable norme technique, l'imprononçable « IEEE 802.11b Direct Sequence »."
+        },
+        {
+          "id": 4,
+          "title": "De simples ondes radio.",
+          "image": "/assets/icons/wifi-router.png",
+          "fact": "Le Wi-Fi n'est pas une magie mystique : il utilise exactement les mêmes ondes radio que les talkies-walkies ou les autoradios ! La grande différence, c'est que ces ondes sont réglées sur des fréquences très précises pour transporter des flux massifs de données numériques à la vitesse de la lumière."
+        },
+        {
+          "id": 5,
+          "title": "L'actrice inventrice.",
+          "image": "/assets/icons/wifi-router.png",
+          "fact": "Pour briller en soirée : le principe de base du Wi-Fi a été co-inventé par une immense star d'Hollywood ! En 1941, l'actrice Hedy Lamarr a imaginé une technique de « saut de fréquence » pour empêcher le brouillage des torpilles alliées. Cette technologie sécurise aujourd'hui nos connexions sans fil !"
+        }
+      ]
+    },
+    {
+      "id": "visiophonie",
+      "title": "Visiophonie",
+      "coverImage": "/assets/icons/visio.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "image": "/assets/icons/visio.png",
+          "fact": "Se voir en se parlant ! Née d'un rêve, l'association de la téléphonie et de la télévision a changé le monde."
+        },
+        {
+          "id": 2,
+          "title": "La visio en chiffres",
+          "image": "/assets/icons/visio.png",
+          "fact": "Texte : Voici les données de cette révolution visuelle : • 💡 1876 : L'idée naît juste après l'invention du téléphone. • 🎞️ Codecs : Elle fonctionne grâce aux formats H.263, H.264 ou MPEG-4. • 📶 3G vs 4G : Née sur réseau circuit, elle explose via protocole IP en 4G. • 🗂️ Données : FaceTime utilise environ 3 Mo par minute. Une technologie hyper optimisée !"
+        },
+        {
+          "id": 3,
+          "title": "Un rêve de science-fiction.",
+          "image": "/assets/icons/visio.png",
+          "fact": "L'idée de se voir à distance existe depuis très longtemps ! Dès 1879, la fiction imaginait déjà le « téléphonoscope ». Fait amusant : l'inventeur Thomas Edison avait réellement conçu un objet portant ce nom, mais ce n'était qu'un simple mégaphone, loin des romans d'anticipation !"
+        },
+        {
+          "id": 4,
+          "title": "Le faux départ de la 3G",
+          "image": "/assets/icons/visio.png",
+          "fact": "On l'a oublié, mais la visiophonie sur mobile a d'abord fait un flop ! Contrairement aux prévisions, la visio classique n'a pas du tout décollé avec l'arrivée de la 3G. C'est finalement grâce à la 4G et aux applications IP (Skype, Viber, FaceTime) que l'usage s'est démocratisé."
+        },
+        {
+          "id": 5,
+          "title": "Une webcam... pour un café !",
+          "image": "/assets/icons/visio.png",
+          "fact": "Sais-tu pourquoi la toute première webcam a été inventée en 1991 ? Pas pour la visiophonie, mais pour surveiller une cafetière ! Des chercheurs de l'université de Cambridge l'ont branchée pour vérifier le niveau de café et éviter de se déplacer pour rien."
+        }
+      ]
+    }
+  ],
+  "animaux": [
+    {
+      "id": "requin",
+      "title": "Requin",
+      "coverImage": "/assets/icons/requin.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "image": "/assets/icons/requin.png",
+          "fact": "Plongeons à la découverte des requins ! Ces poissons fascinants et redoutés règnent en maîtres sur les océans du monde."
+        },
+        {
+          "id": 2,
+          "title": "Voici le profil étonnant de ces prédateurs",
+          "image": "/assets/icons/requin.png",
+          "fact": "• 🌊 Habitat : Présents dans tous les océans du globe. • 📏 Taille max : Jusqu'à 20 mètres (pour le requin-baleine). • ⚖️ Poids max : Un record estimé à 34 tonnes ! • 🦴 Squelette : Fait à 100% de cartilage. Des colosses des mers absolument fascinants !"
+        },
+        {
+          "id": 3,
+          "title": "Contrairement à nous, les requins ne craignent pas d'abîmer leurs dents.",
+          "image": "/assets/icons/requin.png",
+          "fact": "Elles poussent en continu, comme sur un véritable tapis roulant le long de leur mâchoire ! Dès qu'une dent tombe, la suivante s'avance pour prendre sa place. Une machine de chasse toujours parfaitement aiguisée !"
+        },
+        {
+          "id": 4,
+          "title": "Savais-tu que la peau des requins est d'une hygiène irréprochable ?",
+          "image": "/assets/icons/requin.png",
+          "fact": "Elle est recouverte de petites écailles imbriquées appelées denticules. Elles sont si dures qu'elles empêchent complètement les bactéries de s'y accrocher et de coloniser l'animal. Une armure autonettoyante !"
+        },
+        {
+          "id": 5,
+          "title": "Une réputation injustifiée.",
+          "image": "/assets/icons/requin.png",
+          "fact": "Les requins souffrent d'une très mauvaise image à cause d'Hollywood. En réalité, ils ne tuent qu'environ 5 à 10 personnes par an dans le monde. Pour te donner une idée, tu as statistiquement plus de chances de mourir écrasé par un distributeur automatique de boissons que d'être croqué par un requin ! Ils ont plus à nous craindre que l'inverse."
+        }
+      ]
+    },
+    {
+      "id": "chat",
+      "title": "Chat",
+      "coverImage": "/assets/icons/chat.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "image": "/assets/icons/chat.png",
+          "fact": "Bienvenue dans le monde des félins ! Mystérieux, agiles et adorables, les chats sont nos compagnons de salon préférés."
+        },
+        {
+          "id": 2,
+          "title": "Voici le profil type de notre mini-panthère :",
+          "image": "/assets/icons/chat.png",
+          "fact": "• ⏳ Espérance de vie : 12 à 15 ans. • ⚖️ Poids : Entre 3 et 5 kg en moyenne. • 💤 Sommeil : 12 à 16 heures par jour (de vrais pros de la sieste !). • 🏃 Vitesse max : 48 km/h sur un petit sprint. Un prédateur parfaitement taillé pour le canapé !"
+        },
+        {
+          "id": 3,
+          "title": "Le pouvoir du ronronnement.",
+          "image": "/assets/icons/chat.png",
+          "fact": "Le ronronnement n'indique pas toujours le bonheur ! Les chats l'utilisent aussi pour s'apaiser s'ils sont blessés. Mieux encore : les fréquences de ces vibrations (entre 20 et 50 Hertz) ont un effet thérapeutique. Elles accélèrent la guérison de leurs os et apaisent même le stress des humains !"
+        },
+        {
+          "id": 4,
+          "title": "Des acrobates nés.",
+          "image": "/assets/icons/chat.png",
+          "fact": "Comment retombent-ils (presque) toujours sur leurs pattes ? Grâce à leur « réflexe de redressement » ! Leurs yeux et leur oreille interne détectent la chute, et leur colonne vertébrale ultra-flexible, qui compte plus d'os que la nôtre, leur permet de pivoter en plein vol. De vrais ninjas !"
+        },
+        {
+          "id": 5,
+          "title": "Une empreinte unique.",
+          "image": "/assets/icons/chat.png",
+          "fact": "Savais-tu que la truffe d'un chat est aussi unique qu'une empreinte digitale humaine ? Si on la regardait à la loupe, on verrait que chaque nez possède un motif de crêtes et de bosses strictement personnel. Impossible de trouver deux chats avec le même nez dans le monde !"
+        }
+      ]
+    }
+  ],
+  "espace": [
+    {
+      "id": "trou-noir",
+      "title": "Trou noir",
+      "coverImage": "/assets/icons/trou-noir.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "image": "/assets/icons/trou-noir.png",
+          "fact": "Plongez dans le mystère absolu ! Ces ogres cosmiques ont une gravité si forte que rien ne leur échappe, pas même la lumière."
+        },
+        {
+          "id": 2,
+          "title": "Des monstres de l'espace.",
+          "image": "/assets/icons/trou-noir.png",
+          "fact": "Voici la carte d'identité de ces titans spatiaux : • 🚀 Vitesse d'évasion : > 299 792 km/s (la lumière) • ⚖️ Masse : De 3 à des milliards de soleils • 📏 Taille : D'une simple ville à tout un système solaire • 📍 Le plus proche : Gaia BH1, à ~1560 années-lumière Des objets invisibles qui défient l'entendement !"
+        },
+        {
+          "id": 3,
+          "title": "L'effet spaghetti.",
+          "image": "/assets/icons/trou-noir.png",
+          "fact": "Que se passe-t-il si vous tombez dans un trou noir stellaire ? Sa gravité est si extrême que la force tirant sur vos pieds serait bien plus forte que celle sur votre tête. Résultat : vous seriez étiré comme un long fil de pâte ! Les astrophysiciens appellent très sérieusement ce phénomène terrifiant la « spaghettification »."
+        },
+        {
+          "id": 4,
+          "title": "Les maîtres du temps.",
+          "image": "/assets/icons/trou-noir.png",
+          "fact": "Près d'un trou noir, le temps lui-même se déforme. À cause de la relativité générale d'Einstein, plus vous vous approchez de son bord (l'horizon des événements), plus le temps s'écoule lentement pour vous par rapport au reste de l'univers. Une minute près d'un trou noir pourrait durer des années sur Terre !"
+        },
+        {
+          "id": 5,
+          "title": "La Terre en bille.",
+          "image": "/assets/icons/trou-noir.png",
+          "fact": "Pour briller en soirée : n'importe quel objet peut devenir un trou noir s'il est assez comprimé ! C'est une question de densité extrême. Si on voulait transformer notre belle planète Terre en trou noir, il faudrait écraser toute sa masse colossale pour qu'elle tienne dans une sphère de... 9 millimètres de rayon. Une simple bille !"
+        }
+      ]
+    },
+    {
+      "id": "big-bang",
+      "title": "Big bang",
+      "coverImage": "/assets/icons/big-bang.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "image": "/assets/icons/big-bang.png",
+          "fact": "Prêt pour le voyage ultime ? C'est le modèle scientifique qui explique l'origine et l'évolution de notre Univers !"
+        },
+        {
+          "id": 2,
+          "title": "L'Univers en chiffres",
+          "image": "/assets/icons/big-bang.png",
+          "fact": "Voici la carte d'identité de nos origines : • 🎂 Âge : Environ 13,8 milliards d'années. • 🌡️ Température initiale : Des milliards de degrés ! • 📏 Taille : En expansion constante depuis sa naissance. • 🌌 Où : Partout ! Le Big Bang s'est produit dans tout l'espace. Des mensurations qui donnent le vertige !"
+        },
+        {
+          "id": 3,
+          "title": "Pas une explosion !",
+          "image": "/assets/icons/big-bang.png",
+          "fact": "Contrairement à son nom, le Big Bang n'est pas une explosion dans l'espace, mais l'expansion de l'espace lui-même ! Imagine un ballon de baudruche qu'on gonfle : les galaxies s'éloignent les unes des autres parce que l'espace entre elles s'étire, pas parce qu'elles se déplacent."
+        },
+        {
+          "id": 4,
+          "title": "L'écho de la création.",
+          "image": "/assets/icons/big-bang.png",
+          "fact": "Savais-tu qu'on peut encore voir la trace du Big Bang ? Il a laissé une empreinte appelée le « fond diffus cosmologique ». C'est un rayonnement fossile, une sorte de chaleur résiduelle qui baigne tout l'Univers. Il a été découvert totalement par hasard par deux ingénieurs en 1964 !"
+        },
+        {
+          "id": 5,
+          "title": "Une blague à l'origine du nom.",
+          "image": "/assets/icons/big-bang.png",
+          "fact": "Le terme « Big Bang » a été inventé par un de ses plus grands détracteurs ! En 1949, l'astrophysicien Fred Hoyle, qui n'y croyait pas du tout, a utilisé cette expression à la radio britannique pour s'en moquer. L'ironie, c'est que le nom est resté dans l'Histoire !"
+        }
+      ]
+    }
+  ],
+  "culture": [
+    {
+      "id": "punk",
+      "title": "Punk",
+      "coverImage": "/assets/icons/punk2.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "image": "/assets/icons/punk2.png",
+          "fact": "Prêt à faire du bruit ? Né dans les années 70, le punk est une révolution musicale et une véritable rébellion culturelle !"
+        },
+        {
+          "id": 2,
+          "title": "Le réseau en chiffres.",
+          "image": "/assets/icons/punk2.png",
+          "fact": "Le punk en bref. Voici la carte d'identité de cette rébellion : • 📅 Naissance : Milieu des années 1970 • 📍 Origines : États-Unis, Royaume-Uni, Australie • 🎸 Pionniers : Ramones, Sex Pistols, The Clash • ✊ Slogan culte : « No Future »"
+        },
+        {
+          "id": 3,
+          "title": "Du rock brut et rapide.",
+          "image": "/assets/icons/punk2.png",
+          "fact": "Les punks détestaient les longs solos de guitare compliqués des stars du rock de l'époque. Leur réponse ? Des morceaux ultra-rapides, agressifs, et qui durent rarement plus de deux minutes ! L'idée fondatrice : tout le monde peut monter sur scène, même sans savoir bien jouer d'un instrument."
+        },
+        {
+          "id": 4,
+          "title": "Le Do It Yourself (DIY).",
+          "image": "/assets/icons/punk2.png",
+          "fact": "Le punk, c'est la philosophie absolue du « Faites-le vous-même ». Rejetant la société de consommation, les punks créaient leurs propres vêtements déchirés, fondaient des labels de musique totalement indépendants et imprimaient leurs propres magazines amateurs, appelés des « fanzines »."
+        },
+        {
+          "id": 5,
+          "title": "L'origine du mot « Punk ».",
+          "image": "/assets/icons/punk2.png",
+          "fact": "Sais-tu d'où vient ce nom ? En argot anglais, le mot « punk » signifiait à l'origine « voyou », « minable » ou « bon à rien » ! Les critiques musicaux l'utilisaient au départ pour insulter ces jeunes. Mais au lieu de se vexer, les groupes ont revendiqué ce terme avec fierté !"
+        }
+      ]
+    },
+    {
+      "id": "asap-rocky",
+      "title": "Asap Rocky",
+      "coverImage": "/assets/icons/asaprocky.png",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Introduction",
+          "image": "/assets/icons/asaprocky.png",
+          "fact": "Plus qu'un simple rappeur! A$AP Rocky est une figure majeure du hip-hop contemporain, à la croisée de la musique, de la mode et de la culture visuelle."
+        },
+        {
+          "id": 2,
+          "title": "A$AP Rocky en bref.",
+          "image": "/assets/icons/asaprocky.png",
+          "fact": "Voici sa carte d'identité : • Date de naissance : 3 octobre 1988 • Origine : Harlem, New York, États-Unis • Nom réel : Rakim Athelaston Mayers • Collectif : A$AP Mob • Signe distinctif : un rap stylé, entre luxe, image et mode"
+        },
+        {
+          "id": 3,
+          "title": "Un rap planant, élégant et expérimental.",
+          "image": "/assets/icons/asaprocky.png",
+          "fact": "A$AP Rocky s'impose avec des sons sombres, psychédéliques et très travaillés. Son flow maîtrisé et ses influences variées, du hip-hop sudiste au cloud rap, créent une musique à la fois moderne, atmosphérique et immédiatement reconnaissable."
+        },
+        {
+          "id": 4,
+          "title": "L'esthétique comme véritable signature.",
+          "image": "/assets/icons/asaprocky.png",
+          "fact": "Chez A$AP Rocky, l'image compte autant que le son. Clips, vêtements, poses et collaborations construisent un univers visuel fort. Il s'est vite imposé comme une référence de mode, à la frontière entre rappeur, icône culturelle et créateur de tendances."
+        },
+        {
+          "id": 5,
+          "title": "L'origine du nom \"A$AP Rocky\".",
+          "image": "/assets/icons/asaprocky.png",
+          "fact": "L'origine du nom \"A$AP Rocky\". \"Rocky\" vient de son prénom artistique, lié à Rakim. \"A$AP\" renvoie au collectif A$AP Mob, dont il est une figure majeure. Plus qu'un simple nom, A$AP symbolise un groupe, un style de vie et une identité forte du rap new-yorkais."
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,97 @@
+/**
+ * Intro.module.css
+ *
+ * Styles pour la page d'introduction vidéo.
+ * La vidéo occupe tout l'écran, les boutons sont en overlay.
+ */
+
+/* Fond noir total — la vidéo s'affiche par dessus */
+.page {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 100;
+}
+
+/* La vidéo prend tout l'espace disponible et se centre quoi qu'il arrive */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Conteneur des boutons de contrôle — collé en haut à droite */
+.controls {
+  position: absolute;
+  top: 32px;
+  right: 28px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  z-index: 200;
+}
+
+/* Bouton Son & Skip — On uniformise pour utiliser les images PNG */
+.ctaBtn,
+.skipBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  /* Taille fixe pour harmoniser */
+  height: 45px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* On s'assure que les images ne se déforment pas, peu importe leur ratio */
+.ctaBtn img,
+.skipBtn img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.ctaBtn:active,
+.skipBtn:active {
+  transform: scale(0.95);
+}
+
+/* Overlay de transition — fond noir qui s'anime pour la sortie */
+.fadeOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  z-index: 500;
+  pointer-events: none;
+}
+
+/* Sur desktop, on garde la vidéo centrée et aux dimensions de la fenêtre */
+@media (min-width: 1024px) {
+  .video {
+    object-fit: cover;
+    background-color: #000;
+  }
+
+  .controls {
+    top: 40px;
+    right: 48px;
+  }
+
+  /* Effet hover demandé : translateY */
+  .ctaBtn:hover,
+  .skipBtn:hover {
+    transform: translateY(-2px);
+  }
+}

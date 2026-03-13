@@ -1,16 +1,44 @@
 "use client";
 
+import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import TopicCard from '../../molecules/TopicCard/TopicCard';
 import styles from './TopicCarousel.module.css';
 
 /**
- * TopicCarousel : Conteneur pour nos TopicCards. Sur mobile ça scrolle horizontalement,
- * et sur desktop ça se met automatiquement en grille centrée grâce à notre CSS.
+ * TopicCarousel : Conteneur pour nos TopicCards.
+ * Ajout de flèches de navigation pour le scroll horizontal sur desktop.
  */
 export default function TopicCarousel({ topics, onSelectTopic }) {
+  const scrollRef = useRef(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
+
+  // Gère l'affichage des flèches en fonction de la position du scroll
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setShowLeftArrow(scrollLeft > 10);
+      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener('scroll', handleScroll);
+      handleScroll(); // Vérification initiale
+      return () => el.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -300 : 300;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
   
-  // Configuration de l'animation d'apparition des cartes les unes après les autres (effet d'escalier)
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -31,26 +59,49 @@ export default function TopicCarousel({ topics, onSelectTopic }) {
   };
 
   return (
-    <motion.div 
-      className={`${styles.carousel} scroll-snap-x-mandatory`}
-      variants={containerVariants}
-      initial="hidden"
-      animate="show"
-    >
-      {/* Ce div vide nous aide à garder un espace correct sur les bords quand on scrolle sur mobile */}
-      <div className={styles.spacer}></div>
+    <div className={styles.wrapper}>
+      {/* Flèche Gauche */}
+      {showLeftArrow && (
+        <button 
+          className={`${styles.arrow} ${styles.left}`} 
+          onClick={() => scroll('left')}
+          aria-label="Précédent"
+        >
+          ‹
+        </button>
+      )}
 
-      {topics.map((topic) => (
-        <motion.div key={topic.id} variants={itemVariants}>
-          <TopicCard 
-            topic={topic} 
-            onSelect={onSelectTopic} 
-          />
-        </motion.div>
-      ))}
+      <motion.div 
+        ref={scrollRef}
+        className={`${styles.carousel} scroll-snap-x-mandatory`}
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
+        <div className={styles.spacer}></div>
 
-      {/* Pareil ici, un espace vide à la fin pour pas que la dernière carte colle au bord de l'écran */}
-      <div className={styles.spacer}></div>
-    </motion.div>
+        {topics.map((topic) => (
+          <motion.div key={topic.id} variants={itemVariants}>
+            <TopicCard 
+              topic={topic} 
+              onSelect={onSelectTopic} 
+            />
+          </motion.div>
+        ))}
+
+        <div className={styles.spacer}></div>
+      </motion.div>
+
+      {/* Flèche Droite */}
+      {showRightArrow && (
+        <button 
+          className={`${styles.arrow} ${styles.right}`} 
+          onClick={() => scroll('right')}
+          aria-label="Suivant"
+        >
+          ›
+        </button>
+      )}
+    </div>
   );
 }

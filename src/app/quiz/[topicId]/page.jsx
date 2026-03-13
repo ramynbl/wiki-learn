@@ -95,7 +95,7 @@ export default function QuizPage({ params }) {
     }
   }, [currentQuestion, questionIndex, questions, incrementScore, router, topicId, buttonStates]);
 
-  const handleClose = () => router.push('/learn');
+  const handleClose = () => router.push(`/exit/${topicId}`);
 
   // On détecte si les réponses sont courtes (grille 2×2) ou longues (liste empilée)
   const useGrid = currentQuestion ? isShortAnswer(currentQuestion.options) : true;

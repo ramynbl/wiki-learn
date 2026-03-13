@@ -24,7 +24,7 @@ export default function LoadingPage() {
     // On fait semblant que le serveur met 2 secondes à nous répondre (7 dots = 7 * ~285ms)
     const timer = setTimeout(() => {
       router.push(`/topic/${selectedTopicId}`);
-    }, 5000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [selectedTopicId, router]);

@@ -24,10 +24,10 @@ export default function ResultsPage({ params }) {
   // On gère les 3 écrans avec un simple state string
   const [phase, setPhase] = useState('bravo');
 
-  // Phase 1 → Phase 2 automatiquement après 4.5 secondes
+  // Phase 1 → Phase 2 automatiquement après 3.5 secondes
   useEffect(() => {
     if (phase === 'bravo') {
-      const timer = setTimeout(() => setPhase('engage'), 4500);
+      const timer = setTimeout(() => setPhase('engage'), 3500);
       return () => clearTimeout(timer);
     }
   }, [phase]);
