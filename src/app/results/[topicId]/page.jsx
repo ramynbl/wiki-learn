@@ -39,9 +39,9 @@ export default function ResultsPage({ params }) {
     router.push('/learn');
   };
 
-  // "Se connecter" → placeholder pour le futur système d'auth
+  // "Se connecter" → placeholder pour le futur système d'auth → Renvoi vers learn pour le moment
   const handleLogin = () => {
-    router.push('/login');
+    router.push('/learn');
   };
 
   const handleClose = () => {
@@ -146,7 +146,7 @@ export default function ResultsPage({ params }) {
         </div>
       )}
 
-      {/* ===== PHASE 2 : ENGAGE — Motiver l'utilisateur ===== */}
+      {/* ===== PHASE 2 : ENGAGE ===== */}
       {phase === 'engage' && (
         <div className={styles.centerContent}>
           {/* Container pour le livre + explosion (Phase Engage) */}
