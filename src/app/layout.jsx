@@ -1,5 +1,6 @@
 import { Poppins, Lexend } from "next/font/google";
 import "./globals.css";
+import AudioPlayer from "../components/atoms/Audios/AudioPlayer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -22,6 +23,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" className={`${poppins.variable} ${lexend.variable}`}>
       <body>
+        <AudioPlayer />
+
         <main className="app-container">
           {children}
         </main>
