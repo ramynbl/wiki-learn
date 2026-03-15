@@ -65,6 +65,9 @@ export default function IntroPage() {
    * Déclenche le fondu vers le noir puis redirige vers /learn
    */
   const handleExit = () => {
+    // On envoie le signal → AudioPlayer lancera la musique à l'arrivée sur /learn
+    window.dispatchEvent(new Event('start-theme-song'));
+
     setIsFading(true);
     // On attend la fin de l'animation (0.4s) avant de changer de page
     setTimeout(() => {
