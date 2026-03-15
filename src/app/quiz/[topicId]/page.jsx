@@ -13,6 +13,7 @@ import quizMock from '../../../data/quizMock.json';
 import coursesMock from '../../../data/coursesMock.json';
 import { pickRandom, isShortAnswer } from '../../../utils/quizHelpers';
 import styles from './Quiz.module.css';
+import useSound from 'use-sound';
 
 // Nombre de questions à poser dans le quiz
 const QUIZ_COUNT = 3;
@@ -32,6 +33,12 @@ export default function QuizPage({ params }) {
   const router = useRouter();
   const selectedCourseId = useAppStore((state) => state.selectedCourseId);
   const incrementScore = useAppStore((state) => state.incrementScore);
+
+  // Initialisation du son d'erreur
+  const [playError] = useSound('/assets/sounds/bouton_clic_false.wav');
+
+  // Initialisation du son de bonne réponse
+  const [playCorrect] = useSound('/assets/sounds/bouton_clic_true.wav');
 
   // Phase du quiz : "transition" (écran d'intro) ou "playing" (questions en cours)
   const [phase, setPhase] = useState('transition');
@@ -79,6 +86,8 @@ export default function QuizPage({ params }) {
       // Bonne réponse : on passe le bouton en vert, on incrémente le score
       setButtonStates((prev) => ({ ...prev, [option]: 'correct' }));
       incrementScore();
+      // Jouer le son de bonne réponse
+      playCorrect();
 
       // Après 600ms on passe à la question suivante (ou on redirige vers les résultats)
       setTimeout(() => {
@@ -90,6 +99,9 @@ export default function QuizPage({ params }) {
         }
       }, 600);
     } else {
+      // Jouer le son d'erreur
+      playError();
+
       // Mauvaise réponse : on passe le bouton en rouge + shake
       setButtonStates((prev) => ({ ...prev, [option]: 'wrong' }));
 
@@ -102,7 +114,7 @@ export default function QuizPage({ params }) {
         });
       }, 500);
     }
-  }, [currentQuestion, questionIndex, questions, incrementScore, router, topicId, buttonStates]);
+  }, [currentQuestion, questionIndex, questions, incrementScore, router, topicId, buttonStates, playError, playCorrect]);
 
   const handleClose = () => router.push(`/exit/${topicId}`);
 
