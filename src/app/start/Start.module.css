@@ -1,0 +1,108 @@
+/* PAGE */
+.page {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* VIDÉO DE FOND */
+.videoBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* OVERLAY SOMBRE */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* CONTENU CENTRÉ */
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 24px;
+  text-align: center;
+}
+
+/* LOGO */
+.logo {
+  width: 260px;
+  height: auto;
+}
+
+/* PLANÈTE */
+.planet {
+  width: 160px;
+  height: 160px;
+}
+
+/* TEXTE */
+.tagline {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--color-white);
+  max-width: 320px;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000,
+    0px 4px 0px #000;
+}
+
+.text {
+  font-family: var(--font-lexend), sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-white);
+  max-width: 320px;
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 50px;
+}
+
+/* CTA */
+.cta {
+  margin-top: 8px;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    width: 340px;
+  }
+
+  .planet {
+    width: 200px;
+    height: 200px;
+  }
+
+  .tagline {
+    font-size: 1.3rem;
+    max-width: 440px;
+  }
+}
