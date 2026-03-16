@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useAppStore } from '../../store/useAppStore';
 import styles from './Loading.module.css';
 
-// Nombre de cercles dans l'indicateur de chargement
+// C'est le nombre de petits ronds qu'on affiche en bas pour le chargement.
 const DOT_COUNT = 7;
 
 export default function LoadingPage() {
@@ -15,13 +15,13 @@ export default function LoadingPage() {
   const selectedTopicId = useAppStore((state) => state.selectedTopicId);
 
   useEffect(() => {
-    // C'est une sécurité : si on n'a pas de thème en mémoire, on rembobine vers l'accueil
+    // Petite sécu : si jamais on arrive ici sans avoir choisi de thème, on repart en arrière.
     if (!selectedTopicId) {
       router.push('/learn');
       return;
     }
 
-    // On fait semblant que le serveur met 2 secondes à nous répondre (7 dots = 7 * ~285ms)
+    // Fake loading de 2 secondes pour faire genre le serveur réfléchit.
     const timer = setTimeout(() => {
       router.push(`/topic/${selectedTopicId}`);
     }, 2000);
@@ -32,7 +32,7 @@ export default function LoadingPage() {
   return (
     <div className={styles.page}>
       
-      {/* Logo Wiki.Learn en haut */}
+      {/* Notre logo en haut de l'écran */}
       <div className={styles.logoWrapper}>
         <Image
           src="/assets/logo/WikiLearn-black2.png"
@@ -45,7 +45,7 @@ export default function LoadingPage() {
         />
       </div>
 
-      {/* Globe terrestre au centre */}
+      {/* Le globe qui flotte au centre */}
       <main className={styles.main}>
         <motion.div
           className={styles.globeWrapper}
@@ -63,7 +63,7 @@ export default function LoadingPage() {
         </motion.div>
       </main>
 
-      {/* Les 7 cercles vides en bas - animés en CSS pur (sweep de gauche à droite) */}
+      {/* Les petits ronds qui s'animent tout seuls avec les styles CSS */}
       <div className={styles.dotsWrapper}>
         {[...Array(DOT_COUNT)].map((_, i) => (
           <div key={i} className={styles.dot} />
