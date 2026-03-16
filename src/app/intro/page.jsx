@@ -6,21 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Intro.module.css';
 
-/**
- * Page d'introduction : on joue la vidéo intro_mobile.mp4 avant d'envoyer
- * l'utilisateur sur la page de sélection des thèmes.
- *
- * Comportement :
- * - La vidéo démarre automatiquement en muet (les navigateurs bloquent l'autoplay avec le son)
- * - L'utilisateur peut activer le son avec le bouton Son
- * - Il peut aussi sauter directement avec le bouton Skip
- * - Quand la vidéo finit (ou au skip), on fait un fondu vers le noir puis on redirige
- */
+// La page d'intro : on balance la petite vidéo avant le choix des thèmes.
 export default function IntroPage() {
   const videoRef = useRef(null);
   const router = useRouter();
 
-  // On détecte la source de la vidéo selon la taille de l'écran
+  // Hop, je check la taille de l'écran pour savoir quelle vidéo lancer (mobile ou ordi)
   const [videoSrc, setVideoSrc] = useState("/assets/videos/intro_mobile.mp4");
 
   useEffect(() => {
@@ -29,62 +20,50 @@ export default function IntroPage() {
       setVideoSrc(isDesktop ? "/assets/videos/intro_desktop.mp4" : "/assets/videos/intro_mobile.mp4");
     };
 
-    // Vérification initiale
     handleResize();
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // On force le rechargement de la vidéo quand la source change
+  // On force la vidéo à se recharger si on change de source
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.load();
     }
   }, [videoSrc]);
 
-  // Est-ce que la vidéo est en muet ?
-  // NOTE : Les navigateurs bloquent l'autoplay sans interaction si le son est activé.
-  // On démarre donc Muted pour que la vidéo SE LANCE, puis l'utilisateur demute s'il veut.
+  // On lance en muet par défaut because les navigateurs sont relous avec l'autoplay.
   const [isMuted, setIsMuted] = useState(true);
 
-  // Tentative de lecture forcée à chaque changement
+  // On essaie de forcer la lecture quand la vidéo change
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(() => {
-        // L'autoplay est parfois capricieux même en muted
         console.log("Lecture auto bloquée par le navigateur");
       });
     }
   }, [videoSrc]);
 
-  // Contrôle l'overlay noir pour la transition de sortie
+  // Pour l'effet de fondu à la fin
   const [isFading, setIsFading] = useState(false);
 
-  /**
-   * Déclenche le fondu vers le noir puis redirige vers /learn
-   */
+  // Transition vers la suite : on lance la musique et on fait un fondu vers le noir
   const handleExit = () => {
-    // On envoie le signal → AudioPlayer lancera la musique à l'arrivée sur /learn
     window.dispatchEvent(new Event('start-theme-song'));
-
     setIsFading(true);
-    // On attend la fin de l'animation (0.4s) avant de changer de page
+    
+    // Un petit délai pour laisser l'animation de fondu se finir (0.4s)
     setTimeout(() => {
       router.push('/learn');
     }, 400);
   };
 
-  /**
-   * Quand la vidéo se termine, on lance la transition automatiquement
-   */
+  // Si la vidéo finit toute seule, on enchaîne direct
   const handleVideoEnd = () => {
     handleExit();
   };
 
-  /**
-   * Toggle le son de la vidéo
-   */
+  // Petit bouton pour couper ou remettre le son de l'intro
   const handleToggleMute = () => {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
@@ -95,7 +74,7 @@ export default function IntroPage() {
   return (
     <div className={styles.page}>
 
-      {/* La vidéo plein écran — autoPlay + muted obligatoires ensemble pour que ça marche dans Chrome/Safari */}
+      {/* La vidéo en plein écran */}
       <video
         ref={videoRef}
         className={styles.video}
@@ -106,7 +85,7 @@ export default function IntroPage() {
         onEnded={handleVideoEnd}
       />
 
-      {/* Boutons de contrôle en overlay (en haut à droite) */}
+      {/* Les boutons de contrôle en haut à droite */}
       <div className={styles.controls}>
 
         {/* Bouton Son / Muet */}
@@ -124,7 +103,7 @@ export default function IntroPage() {
           />
         </button>
 
-        {/* Bouton Skip avec l'image skip.png */}
+        {/* Bouton Skip pour passer l'intro si on est pressé */}
         <button
           className={styles.skipBtn}
           onClick={handleExit}

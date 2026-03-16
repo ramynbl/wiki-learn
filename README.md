@@ -84,8 +84,8 @@ Pour éviter un code monolithique, le projet suit de manière stricte le pattern
 
 ### 3. Gestion de l'État (State Management)
 
-- **Zustand :** Utilisé à la place de Redux ou Context API pour sa légèreté. Zustand gère des souscriptions par sélecteurs, garantissant qu'un composant ne se re-render *que* si sa donnée spécifique change (contrairement au Context React natif).
-- **Persistance :** Middleware `persist` couplé au `localStorage` pour sauvegarder la session du joueur (XP, thème en cours, scores).
+- **Zustand :** On l'a choisi parce que c'est beaucoup plus léger que Redux. Ça nous permet de garder le score (XP) et les pages récoltées au même endroit. Comme ça, tout le site est au courant de la progression du joueur sans galérer avec des props dans tous les sens.
+- **Persistance :** On utilise le middleware `persist` pour que la session soit sauvegardée dans le `localStorage`. Pratique pour pas que le joueur perde ses livres s'il ferme l'onglet par erreur !
 
 ### 4. Styles et CSS
 
@@ -93,14 +93,17 @@ Pour éviter un code monolithique, le projet suit de manière stricte le pattern
 - **Variables Globales (`globals.css`) :** Utilisation intensive des Custom Properties (`var(--color-...)`) pour centraliser le Design System (prêt pour le theming/Dark Mode).
 - **CSS Moderne :** Utilisation de `scroll-snap-type` pour le carousel (sans surcharge JS) et de `border-radius` irréguliers pour un style "cartoon/jeu vidéo".
 
-### 5. Animations et Fluides Pédagogiques
+### 5. Animations et Expérience Sonore
 
-- **Framer Motion :** Moteur d'animation principal. Apporte un "App Feel" essentiel à un jeu avec des rebonds (`type: "spring"`) et des apparitions en liste (*staggered animations*).
+- **Framer Motion :** C'est notre moteur principal pour que l'app soit fluide. On a mis des petits rebonds (`type: "spring"`) et des apparitions en liste pour que ça fasse vraiment "application mobile".
+- **GSAP :** On le garde sous le coude pour les animations plus complexes, comme les timelines ou des effets de décompte qu'on rajoutera bientôt.
+- **use-sound :** Super pratique pour gérer la musique de fond et les bruitages (clics, succès) sans se prendre la tête avec l'API Web Audio native.
 
-### 6. Flux de Navigation et Données (Data Flow)
+### 6. Flux de Navigation et Données
 
-- **Mock Data (`topicsMock.json`) :** Découplage strict UI/Données en anticipation de l'appel API distant (Wikimedia / Groq).
-- **Transition Asynchrone :** Page de transition artificielle (`/loading/page.jsx`) simulant une latence réseau pour respecter les bonnes pratiques UX.
+- **Axios :** On l'utilise pour les futurs appels à l'API Wikipédia. C'est plus simple que `fetch` pour gérer les erreurs et transformer les résultats.
+- **Données Mocks (`topicsMock.json`) :** En attendant que l'API soit totalement prête, on utilise un fichier JSON pour simuler les catégories. Ça permet de bosser sur l'UI sans dépendre du serveur.
+- **Transition Asynchrone :** On a créé une page de chargement exprès (`/loading/page.jsx`) pour simuler un petit temps de réseau et pas avoir une transition trop brutale.
 
 ---
 

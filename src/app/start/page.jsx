@@ -6,13 +6,14 @@ import Image from 'next/image';
 import Button from '../../components/atoms/Button/Button';
 import styles from './Start.module.css';
 
-// Start: Page d'accueil — débloque l'audio du navigateur au premier clic.
+// C'est notre porte d'entrée ! On s'en sert aussi pour "réveiller" l'audio du navigateur 
+// (il bloque tout s'il n'y a pas un vrai clic humain au début).
 export default function StartPage() {
   const router = useRouter();
 
+  // Petit bouton pour lancer l'aventure
   const handleStart = () => {
-    // Le clic débloque l'autoplay policy du navigateur.
-    // La musique sera lancée plus tard, à l'arrivée sur /learn.
+    // Hop, on file vers l'intro. Le clic prépare le terrain pour la musique plus tard.
     router.push('/intro');
   };
 
